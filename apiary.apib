@@ -110,3 +110,48 @@ Description.
     + Body
 
              {"response":"Something is not ok"}
+             
+
+
+## Moduly uživatele [/account/:id/modules]
+
+### Operation [GET]
+
+Description.
+
+#### Moduly uživatele na mainPage
+
++ Request (application/json)
+
+    
+
++ Response 200 (application/json)
+
+    + Headers
+
+            Access-Control-Allow-Origin: *
+
+    + Body
+
+            {
+            "databaseOfhumanResource":{"disabled": "true","name": "nls.module.name.key","buy": "true"},
+            "selectionOfCandidates":{"disabled": "true","name": "nls.module.name.key","buy": "true"}, 
+            "buildTeam":{"disabled": "false","name": "nls.module.name.key","buy": "false"} ,
+            "incorporation":{"disabled": "false","name": "nls.module.name.key","buy": "false"} ,
+            "motivationAndTraining":{"disabled": "false","name": "nls.module.name.key","buy": "false"}, 
+            "myAccount":{"disabled": "false","name": "nls.module.name.key","buy": "false"} ,
+            "myTrainings":{"disabled": "false","name": "nls.module.name.key","buy": "false"} ,
+            "myConsultation":{"disabled": "false","name": "nls.module.name.key","buy": "false"} ,
+            }
+            
+
++ Response 400 (application/json)
+
+    + Headers
+
+            Accept: application/json
+
+    + Body
+
+             {"response":"Something is not ok"}
+             
