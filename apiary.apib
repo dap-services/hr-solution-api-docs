@@ -54,3 +54,59 @@ Description.
 
             {"response":"string"}
 
+# Group Modules
+
+ Main page modules.
+
+## Resource [/account/:id/modules]
+
+### Operation [GET]
+
+Description.
+
+#### Get Main page modules.
+
++ Request (application/json)
+
+    + Headers
+
+            Accept: application/json
+
+    + Body
+
+            {
+               "first_name": "first_name",
+                "last_name": "last_name",
+                "company_name": "company_name",
+                "email": "email",
+                "address": "address",
+                "country_code":"ISO country code",
+                "language_code": "ISO language code",
+                "phone_number": "123 123 1234",
+                "login": "login_name",
+                "password": "PASSWORD",
+                "verify_password": "PASSWORD",
+                "vat_number": "vat_number"
+            }
+
+
++ Response 200 (application/json)
+
+    + Headers
+
+            Access-Control-Allow-Origin: *
+
+    + Body
+
+            {"response":"Everything is ok"}
+ 
+
++ Response 400 (application/json)
+
+    + Headers
+
+            Accept: application/json
+
+    + Body
+
+             {"response":"Something is not ok"}
