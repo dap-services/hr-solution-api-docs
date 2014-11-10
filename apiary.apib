@@ -154,4 +154,67 @@ Description.
     + Body
 
              {"response":"Something is not ok"}
+      
+      
+## Languages Collection [/language/en]
+
+### Operation [GET]
+
+Description.
+
+#### List all Languages
+
++ Request (application/json)
+
+    + Headers
+
              
+
++ Response 200 (application/json)
+
+    + Headers
+
+            Access-Control-Allow-Origin: *
+
+    + Body
+
+            [{
+            "name": "EN",
+            "id": 1
+            }, {
+            "name": "DE",
+            "id": 2
+            }, {
+            "name": "CZE",
+            "id": 3
+            }]   
+            
+## Countries Collection [/country/en]
+
+### Operation [GET]
+
+Description.
+
+#### List all Countries
+
++ Request (application/json)
+
+    + Headers
+
+             
+
++ Response 200 (application/json)
+
+    + Headers
+
+            Access-Control-Allow-Origin: *
+
+    + Body
+
+            [{
+                "name": "USA",
+                "id": 1
+            },{
+                "name": "Canada",
+                "id": 2
+            }]
