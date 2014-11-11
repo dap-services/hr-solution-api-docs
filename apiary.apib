@@ -156,7 +156,7 @@ Description.
              {"response":"Something is not ok"}
       
       
-## Languages Collection [/language/en]
+## Languages Collection [/language]
 
 ### Operation [GET]
 
@@ -168,7 +168,8 @@ Description.
 
     + Headers
 
-             
+              Access-Control-Allow-Origin: *
+              
 
 + Response 200 (application/json)
 
@@ -183,7 +184,6 @@ Description.
              "description": "Angličtina",
              "i18nKey": "en"
             }, {
-            "name": "DE",
             "id": 2,
             "description": "Němčina",
              "i18nKey": "de"
@@ -194,7 +194,7 @@ Description.
              "i18nKey": "cz"
             }]   
             
-## Countries Collection [/country/en]
+## Countries Collection [/country]
 
 ### Operation [GET]
 
@@ -206,6 +206,7 @@ Description.
 
     + Headers
 
+            Access-Control-Allow-Origin: *
              
 
 + Response 200 (application/json)
