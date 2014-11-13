@@ -181,4 +181,36 @@ Description.
                  "description": "Canada",
                 "i18nKey": "CA"
             }]
-           
+            
+## User detail [/myaccount]
+
+### Operation [GET]
+
+Description.
+
+#### User detail
+
++ Request (application/json)
+    + Headers
+
+            Accept: application/json
+
+    + Body
+
+            {
+               "id": "1"
+            }
+            
++ Response 200 (application/json)
+
+    + Headers
+
+            Access-Control-Allow-Origin: *
+
+    + Body
+            
+            {
+                "namesurname": "John Doe",
+                "email": "johndoe@email.cz",
+                "phone": "+420 111 333 555"
+            }
