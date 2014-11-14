@@ -256,9 +256,12 @@ Description.
              "recovery":false
              }
              
-## Users Login [/account/loginbad]
+## Users Login [/account/messages]
 ### Login User [POST]
-            
+    
+Description: Zdroj je urcen jen pro ukazkove ucely(napr. pro 401).
+Jednu message lze poslat i bez pole(jen "messages":{...} ).
+
 + Response 401 (Unauthorized)
 
     + Header
@@ -268,9 +271,10 @@ Description.
     + Body
     
             {
-                "error": [
-                    {"message": "i18nKeyErrorMessageUnauthorized1"},
-                    {"message": "i18nKeyErrorMessageUnauthorized2"}
+                "messages": [
+                    {"i18nKey": "i18nKeyErrorMessageUnauthorized1","type":"error"},
+                    {"i18nKey": "i18nKeyErrorMessageUnauthorized2","type":"info"},
+                    {"i18nKey": "i18nKeyErrorMessageUnauthorized3","type":"success"}
                 ]
             }                        
             
@@ -286,7 +290,8 @@ Description.
     + Body
             
             {
-            "user_id": 12312334,
-            "token": "security_token",
-            "role":["admin","user","consultant","businessman"]
+                "user_id": 12312334,
+                "token": "security_token",
+                "role":["admin","user","consultant","businessman"],
+                "name_surname":"Jon Black"
             }
