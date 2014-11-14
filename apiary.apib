@@ -255,3 +255,38 @@ Description.
              "response":"Something is not ok",
              "recovery":false
              }
+             
+## Users Login [/account/loginbad]
+### Login User [POST]
+            
++ Response 401 (Unauthorized)
+
+    + Header
+    
+            Access-Control-Allow-Origin: *
+            
+    + Body
+    
+            {
+                "error": [
+                    {"message": "i18nKeyErrorMessageUnauthorized1"},
+                    {"message": "i18nKeyErrorMessageUnauthorized2"}
+                ]
+            }                        
+            
+## Users Login [/account/login]
+### Login User [POST]
+
++ Response 200 (application/json)
+
+    + Header
+            
+            Access-Control-Allow-Origin: *
+            
+    + Body
+            
+            {
+            "user_id": 12312334,
+            "token": "security_token",
+            "role":["admin","user","consultant","businessman"]
+            }
