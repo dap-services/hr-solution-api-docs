@@ -205,10 +205,70 @@ Description.
     + Body
             
             {
-                "namesurname": "John Doe",
+                "name_surname": "John Doe",
                 "email": "johndoe@email.cz",
-                "phone": "+420 111 333 555"
+                "phone": "+420 111 333 555",
+                "company": "Example Company",
+                "street": "Sadová",
+                "city": "Ostrava",
+                "zip": "702 00",
+                "country": "Czech Rep",
+                "vat_id": "112233"
             }
+
+## User update [/account]
+
+### Operation [PUT]
+
+Description.
+
+#### User detail
+
++ Request (application/json)
+    + Headers
+
+             Access-Control-Allow-Origin: *
+             
+    + Body
+    
+            {
+                "name_surname": "name  surname",
+                "email": "email",
+                "phone": "phone",
+                "company": "company",
+                "street": "street",
+                "city": "city",
+                "zip": "zip",
+                "country": "country",
+                "vat_id": "vat_id"
+                
+            }
+
+
++ Response 200 (application/json)
+
+    + Headers
+
+            Access-Control-Allow-Origin: *
+
+    + Body
+    
+            {
+             "response":"User account updated."
+            }
+
++ Response 400 (application/json)
+
+    + Headers
+
+            Access-Control-Allow-Origin: *
+
+    + Body
+    
+            {
+             "response":"An error occured."
+            }
+
             
 ## User detail [/mail]
 
@@ -256,12 +316,9 @@ Description.
              "recovery":false
              }
              
-## Users Login [/test/messages]
+## Users Login [/account/loginbad]
 ### Login User [POST]
-    
-Description: Zdroj je urcen jen pro ukazkove ucely(napr. pro 401).
-Jednu message lze poslat i bez pole(jen "messages":{...} ).
-
+            
 + Response 401 (Unauthorized)
 
     + Header
@@ -271,10 +328,9 @@ Jednu message lze poslat i bez pole(jen "messages":{...} ).
     + Body
     
             {
-                "messages": [
-                    "message":{"i18nKey": "i18nKeyErrorMessageUnauthorized1","type":"error"},
-                    "message":{"i18nKey": "i18nKeyErrorMessageUnauthorized2","type":"info"},
-                    "message":{"i18nKey": "i18nKeyErrorMessageUnauthorized3","type":"success"}
+                "error": [
+                    {"message": "i18nKeyErrorMessageUnauthorized1"},
+                    {"message": "i18nKeyErrorMessageUnauthorized2"}
                 ]
             }                        
             
@@ -290,8 +346,7 @@ Jednu message lze poslat i bez pole(jen "messages":{...} ).
     + Body
             
             {
-                "user_id": 12312334,
-                "token": "security_token",
-                "role":["admin","user","consultant","businessman"],
-                "name_surname":"Jon Black"
+            "user_id": 12312334,
+            "token": "security_token",
+            "role":["admin","user","consultant","businessman"]
             }
