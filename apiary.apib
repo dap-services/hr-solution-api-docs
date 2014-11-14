@@ -210,13 +210,11 @@ Description.
                 "phone": "+420 111 333 555"
             }
             
-## User detail [/account/recoverpassword]
+## User detail [/mail]
+
 ### Operation [POST]
 
-Obdrzi jeden email na nemz bylo zapomenuto heslo.
-Vyhleda uzivatele podle tohoto emailu, vytvori identifikacni kod a odesle email s odkazem na zmenu hesla ktery obsahuje identifikacni kod.
-Pokud zadany email neexistuje nic neprovadi.
-Vzdy vraci 204, aby nebylo mozne zjistovat existenci emailu v systemu.
+Description.
 
 #### User detail
 
@@ -229,18 +227,41 @@ Vzdy vraci 204, aby nebylo mozne zjistovat existenci emailu v systemu.
     
             {
              "email": "email@example.com"
-            }
+            }  
 
 
-+ Response 204 (application/json)
++ Response 200 (application/json)
 
     + Headers
 
             Access-Control-Allow-Origin: *
 
-## Users Login [/account/loginbad]
-### Login User [POST]
+    + Body
             
+            {
+             "response":"Something is ok",
+             "recovery":true
+             }
+            
++ Response 400 (application/json)
+
+    + Headers
+
+            Accept: application/json
+
+    + Body
+
+             {
+             "response":"Something is not ok",
+             "recovery":false
+             }
+             
+## Users Login [/test/messages]
+### Login User [POST]
+    
+Description: Zdroj je urcen jen pro ukazkove ucely(napr. pro 401).
+Jednu message lze poslat i bez pole(jen "messages":{...} ).
+
 + Response 401 (Unauthorized)
 
     + Header
@@ -250,9 +271,10 @@ Vzdy vraci 204, aby nebylo mozne zjistovat existenci emailu v systemu.
     + Body
     
             {
-                "error": [
-                    {"message": "i18nKeyErrorMessageUnauthorized1"},
-                    {"message": "i18nKeyErrorMessageUnauthorized2"}
+                "messages": [
+                    "message":{"i18nKey": "i18nKeyErrorMessageUnauthorized1","type":"error"},
+                    "message":{"i18nKey": "i18nKeyErrorMessageUnauthorized2","type":"info"},
+                    "message":{"i18nKey": "i18nKeyErrorMessageUnauthorized3","type":"success"}
                 ]
             }                        
             
@@ -268,7 +290,8 @@ Vzdy vraci 204, aby nebylo mozne zjistovat existenci emailu v systemu.
     + Body
             
             {
-            "user_id": 12312334,
-            "token": "security_token",
-            "role":["admin","user","consultant","businessman"]
+                "user_id": 12312334,
+                "token": "security_token",
+                "role":["admin","user","consultant","businessman"],
+                "name_surname":"Jon Black"
             }
