@@ -209,3 +209,43 @@ Description.
                 "email": "johndoe@email.cz",
                 "phone": "+420 111 333 555"
             }
+            
+## User detail [/mail]
+
+### Operation [GET]
+
+Description.
+
+#### User detail
+
++ Request (application/json)
+    + Headers
+
+             Access-Control-Allow-Origin: *
+
+
++ Response 200 (application/json)
+
+    + Headers
+
+            Access-Control-Allow-Origin: *
+
+    + Body
+            
+            {
+             "response":"Something is ok",
+             "recovery":true
+             }
+            
++ Response 400 (application/json)
+
+    + Headers
+
+            Accept: application/json
+
+    + Body
+
+             {
+             "response":"Something is not ok",
+             "recovery":false
+             }
