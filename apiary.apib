@@ -328,9 +328,10 @@ Description.
     + Body
     
             {
-                "error": [
-                    {"message": "i18nKeyErrorMessageUnauthorized1"},
-                    {"message": "i18nKeyErrorMessageUnauthorized2"}
+                "messages": [
+                    "message": {"i18nKey":"i18nKeyErrorMessageUnauthorized1","type":"error"},
+                    "message": {"i18nKey":"i18nKeyErrorMessageUnauthorized2","type":"info"},
+                    "message": {"i18nKey":"i18nKeyErrorMessageUnauthorized2","type":"success"}
                 ]
             }                        
             
@@ -349,5 +350,5 @@ Description.
             "user_id": 12312334,
             "token": "security_token",
             "role":["admin","user","consultant","businessman"],
-            "name_surname":"Jon Black"
+            "name_surname":"John Black"
             }
