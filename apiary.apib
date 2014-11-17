@@ -62,9 +62,12 @@ Description.
 
 ### Operation [POST]
 
-Description.
-
 #### Registrace uživatele
+
+Po odeslání formuláře, je odeslán email s linkem, ten obsahuje klíč pro aktivaci účtu.
+Link otevře stránku confirmpage, odešle klíč do api, tam se klíč ověří, a aktivuje se účet.
+Api vratí status 200 + login usera nebo 400, podle toho stránka confirmpage zobrazí login form s před
+vyplněným loginem.
 
 + Request (application/json)
 
