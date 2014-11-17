@@ -355,3 +355,37 @@ Description.
             "role":["admin","user","consultant","businessman"],
             "name_surname":"John Black"
             }
+            
+## Orders Collection [/account/{id}/orders]
+### Operation [GET]
+Description.
+
+#### List all user orders
+
++ Request (application/json)
+
+    + Headers
+
+            Access-Control-Allow-Origin: *
+
++ Response 200 (application/json)
+
+    + Headers
+
+            Access-Control-Allow-Origin: *
+
+    + Body
+
+            [{
+            "id": 1,
+            "name": "Databáze lidských zdrojů"
+            "insert_time": "1.11.2014",
+            "valid_until": "1.1.2015",
+            "status": "Čeká na schválení"
+            },{
+            "id": 2,
+            "name": "Správný dílek do týmu"
+            "insert_time": "16.10.2014",
+            "valid_until": "1.1.2015",
+            "status": "Faktura"
+            }]
