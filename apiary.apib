@@ -62,12 +62,9 @@ Description.
 
 ### Operation [POST]
 
-#### Registrace uživatele
+Description.
 
-Po odeslání formuláře, je odeslán email s linkem, ten obsahuje klíč pro aktivaci účtu.
-Link otevře stránku confirmpage, odešle klíč do api, tam se klíč ověří, a aktivuje se účet.
-Api vratí status 200 + login usera nebo 400, podle toho stránka confirmpage zobrazí login form s před
-vyplněným loginem.
+#### Registrace uživatele
 
 + Request (application/json)
 
@@ -356,98 +353,20 @@ Description.
             "name_surname":"John Black"
             }
             
-## Orders Collection [/account/{id}/orders]
-### Operation [GET]
-Description.
-
-#### List all user orders
-
-+ Request (application/json)
-
-    + Headers
-
-            Access-Control-Allow-Origin: *
-
-+ Response 200 (application/json)
-
-    + Headers
-
-            Access-Control-Allow-Origin: *
-
-    + Body
-
-            [{
-            "id": 1,
-            "name": "Databáze lidských zdrojů",
-            "insert_time": "1.11.2014",
-            "valid_until": "1.1.2015",
-            "status": "WAITING"
-            },{
-            "id": 2,
-            "name": "Správný dílek do týmu",
-            "insert_time": "16.10.2014",
-            "valid_until": "1.1.2015",
-            "status": "INVOICE"
-            },{
-            "id": 3,
-            "name": "Zapracování",
-            "insert_time": "16.10.2014",
-            "valid_until": "16.12.2014",
-            "status": "PAID"
-            }]
-
-## User's password change [/account/passwordchange]
-### Operation [POST]
-Description.
-
-#### Store a changed user password
-
-+ Request (application/json)
-
-    + Headers
-
-            Access-Control-Allow-Origin: *
-
-+ Response 200 (application/json)
-
-    + Headers
-
-            Access-Control-Allow-Origin: *
-
-    + Body
+## Users messages [/test/messages201]
+### Login User [GET]
             
-            {
-                "messages": [
-                    {"i18nKey":"i18nKeySuccessMessagePasswordChange","type":"success"}
-                ]
-            }
-            
-+ Response 400 (application/json)
-
-    + Headers
-
-            Accept: application/json
-
-    + Body
-
-            {
-                "messages": [
-                    {"i18nKey":"i18nKeyErrorMessagePasswordChange","type":"error"}
-                ]
-            }
-            
-## Download pdf [/order/{id}/invoice]
-### Download [GET]
-
-+ Response 200
++ Response 201 (Created)
 
     + Header
-
-            Content-Type: application/pdf
-            Content-Disposition: attachment; filename="invoice.pdf"
+    
             Access-Control-Allow-Origin: *
-
+            
     + Body
-
-            Order invoice
-
+    
+            {
+                "messages": [
+                    {"i18nKey":"i18nKeyErrorMessageUnauthorized2","type":"info"},
+                    {"i18nKey":"i18nKeyErrorMessageUnauthorized3","type":"success"}
+                ]
+            } 
