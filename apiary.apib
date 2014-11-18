@@ -370,3 +370,43 @@ Description.
                     {"i18nKey":"i18nKeyErrorMessageUnauthorized3","type":"success"}
                 ]
             } 
+            
+## Orders Collection [/account/{id}/orders]
+### Operation [GET]
+Description.
+
+#### List all user orders
+
++ Request (application/json)
+
+    + Headers
+
+            Access-Control-Allow-Origin: *
+
++ Response 200 (application/json)
+
+    + Headers
+
+            Access-Control-Allow-Origin: *
+
+    + Body
+
+            [{
+            "id": 1,
+            "name": "Databáze lidských zdrojů",
+            "insert_time": "1.11.2014",
+            "valid_until": "1.1.2015",
+            "status": "WAITING"
+            },{
+            "id": 2,
+            "name": "Správný dílek do týmu",
+            "insert_time": "16.10.2014",
+            "valid_until": "1.1.2015",
+            "status": "INVOICE"
+            },{
+            "id": 3,
+            "name": "Zapracování",
+            "insert_time": "16.10.2014",
+            "valid_until": "16.12.2014",
+            "status": "PAID"
+            }]
