@@ -417,9 +417,10 @@ Description.
     + Body
             
             {
-             "response":"Password successfuly changed",
-             "recovery":true
-             }
+                "messages": [
+                    {"i18nKey":"i18nKeySuccessMessagePasswordChange","type":"success"}
+                ]
+            }
             
 + Response 400 (application/json)
 
@@ -429,7 +430,8 @@ Description.
 
     + Body
 
-             {
-             "response":"An error occured during a password change.",
-             "recovery":false
-             }
+            {
+                "messages": [
+                    {"i18nKey":"i18nKeyErrorMessagePasswordChange","type":"error"}
+                ]
+            }
