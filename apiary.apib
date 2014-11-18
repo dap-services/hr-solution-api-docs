@@ -270,52 +270,23 @@ Description.
             }
 
             
-## User detail [/mail pokus]
+## User detail [/account/recoverpassword]
+### ano [POST]
 
-### Operation [POST]
+Obdrzi jeden email na nemz bylo zapomenuto heslo.
+Vyhleda uzivatele podle tohoto emailu, vytvori identifikacni kod a odesle email s odkazem na zmenu hesla ktery obsahuje identifikacni kod.
+Pokud zadany email neexistuje nic neprovadi.
+Vzdy vraci 204, aby nebylo mozne zjistovat existenci emailu v systemu.
 
-Description.
++ Request
 
-#### User detail
+        {
+            "email": "email@example.com"
+        }
 
-+ Request (application/json)
-    + Headers
-
-             Access-Control-Allow-Origin: *
-
-    + Body
-    
-            {
-             "email": "email@example.com"
-            }  
++ Response 204
 
 
-+ Response 200 (application/json)
-
-    + Headers
-
-            Access-Control-Allow-Origin: *
-
-    + Body
-            
-            {
-             "response":"Something is ok",
-             "recovery":true
-             }
-            
-+ Response 400 (application/json)
-
-    + Headers
-
-            Accept: application/json
-
-    + Body
-
-             {
-             "response":"Something is not ok",
-             "recovery":false
-             }
-             
 ## Users Login [/test/messages]
 ### Login User [GET]
             
