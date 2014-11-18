@@ -410,3 +410,44 @@ Description.
             "valid_until": "16.12.2014",
             "status": "PAID"
             }]
+            
+## User's password change [/account/passwordchange]
+### Operation [POST]
+Description.
+
+#### Store a changed user password
+
++ Request (application/json)
+
+    + Headers
+
+            Access-Control-Allow-Origin: *
+
++ Response 200 (application/json)
+
+    + Headers
+
+             Access-Control-Allow-Origin: *
+
+    + Body
+             
+            {
+                "messages": [
+                    {"i18nKey":"i18nKeySuccessMessagePasswordChange","type":"success"}
+                ]
+            }
+             
++ Response 400 (application/json)
+
+    + Headers
+
+            Accept: application/json
+
+    + Body
+
+             {
+                 "messages": [
+                    {"i18nKey":"i18nKeyErrorMessagePasswordChange","type":"error"}
+                 ]
+            }
+
