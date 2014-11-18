@@ -451,3 +451,17 @@ Description.
                  ]
             }
 
+## Download pdf [/order/{id}/invoice]
+### Download [GET]
+
++ Response 200
+
+    + Header
+
+            Content-Type: application/pdf
+            Content-Disposition: attachment; filename="invoice.pdf"
+            Access-Control-Allow-Origin: *
+
+    + Body
+
+            Order invoice
