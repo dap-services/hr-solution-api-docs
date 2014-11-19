@@ -422,6 +422,27 @@ Description.
                     {"i18nKey":"i18nKeyErrorMessagePasswordChange","type":"error"}
                  ]
             }
+            
+## Generate pdf invoice [/order/{id}/generateinvoice]
+### List Diag Group Result [POST]
++ Request (application/json)
+
+    + Headers
+
+             Access-Control-Allow-Origin: *
+
+
++ Response 200 (application/json)
+
+    + Header
+
+            Access-Control-Allow-Origin: *
+
+    + Body
+
+            {
+                "hash_invoice": "hdkdirrff15487",
+            }
 
 ## Download pdf [/order/{id}/invoice]
 ### Download [GET]
