@@ -325,22 +325,21 @@ Vzdy vraci 204, aby nebylo mozne zjistovat existenci emailu v systemu.
             "name_surname":"John Black"
             }
             
-## Users messages [/test/messages201]
-### Login messages [GET]
+## Users 201 message [/test/messages201]
+### Users 201 message [GET]
             
-+ Response 201 (Created)
++ Response 201 
 
     + Header
     
             Access-Control-Allow-Origin: *
+            X-License-Hr4: true
             
     + Body
     
             {
-                "messages": [
-                    {"i18nKey":"i18nKeyErrorMessageUnauthorized2","type":"info"},
-                    {"i18nKey":"i18nKeyErrorMessageUnauthorized3","type":"success"}
-                ]
+                "messages": 
+                    {"i18nKey":"i18nKeyCreatedMessage","type":"success"}
             } 
             
 ## Orders Collection [/account/{id}/orders]
