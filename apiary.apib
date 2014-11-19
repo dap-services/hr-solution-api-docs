@@ -540,3 +540,26 @@ Description.
                  ]
             }           
             
+## Note [/account/recoverynewpassword]
+### Retrieve a Note [POST]
+
+request to set user's password
+code - long string to recognize user
+password - new password for user
+
++ Request (application/json)
+
+    + Headers
+
+            Accept: application/json
+
+    + Body
+
+            {
+                "code": "CODE"
+                "password": "PASSWORD"
+            }
+            
++ Response 204
+
++ Response 400
