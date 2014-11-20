@@ -278,6 +278,10 @@ Vyhleda uzivatele podle tohoto emailu, vytvori identifikacni kod a odesle email 
 Pokud zadany email neexistuje nic neprovadi.
 Vzdy vraci 204, aby nebylo mozne zjistovat existenci emailu v systemu.
 
+url v emailu pro zmenu hesla je [ /passwordrecovery/newpassword?email=XXX&code=XXX ]
+kde email je email pro doplneni do login page, na kterou se presmeruje po uspesne zmene hesla
+a code je dlouhy retezec pro identifikaci uzivatele
+
 + Request
 
         {
