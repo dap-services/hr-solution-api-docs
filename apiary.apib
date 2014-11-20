@@ -581,3 +581,50 @@ password - new password for user
             {
                 "data": "data"
             }
+            
+## HR4 person list [/account/{id}/hr4/persons]
+### Operation [GET]
+Get the list of persons for hr4 model and specific user.
+
+#### List all persons
+
++ Request (application/json)
+
+    + Headers
+
+            Access-Control-Allow-Origin: *
+
++ Response 200 (application/json)
+
+    + Headers
+
+            Access-Control-Allow-Origin: *
+
+    + Body
+
+            [{
+            "id": 1,
+            "name": "František",
+            "surname": "Vomáčka",
+            "position": "Kuchař"
+            },{
+            "id": 2,
+            "name": "Elizabeth II.",
+            "surname": "Windsor",
+            "position": "Queen of the Empire"
+            },{
+            "id": 3,
+            "name": "Silvestr",
+            "surname": "Stalone",
+            "position": "Boxer"
+            },{
+            "id": 3,
+            "name": "Arnold",
+            "surname": "Schwarz",
+            "position": "Krotitel predátorů"
+            },{
+            "id": 4,
+            "name": "Elton",
+            "surname": "John",
+            "position": "Profesionální účastník karaoke"
+            }]
