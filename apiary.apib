@@ -442,7 +442,7 @@ Description.
 
             Order invoice
 
-## Person detail [/persons/{user_id}/person/{person_id}]
+## Person detail [/account/{user_id}/hr4/person/{person_id}]
 
 ### Operation [GET]
 
@@ -490,7 +490,7 @@ Description.
             }
             
             
-### Operation [POST]
+### Operation [PUT]
 
 Description.
 
@@ -542,6 +542,54 @@ Description.
                     {"i18nKey":"i18nKeyErrorMessagePersonDetail","type":"error"}
                  ]
             }           
+            
+### Operation [POST]
+
+Description.
+
+#### Delete Person
+
++ Request (application/json)
+
+    + Headers
+
+            Access-Control-Allow-Origin: *
+             
+     
+
++ Response 200 (application/json)
+
+    + Headers
+
+            Access-Control-Allow-Origin: *
+            Accept: application/json
+
+    + Body
+            
+            {
+                 "messages": [
+                    {"i18nKey":"i18nKeySuccessMessagePersonDetailDeleted","type":"success"}
+                 ]
+            }    
+            
+            
+            
++ Response 400 (application/json)
+
+    + Headers
+
+            Accept: application/json
+            Access-Control-Allow-Origin: *
+
+    + Body
+
+            {
+                 "messages": [
+                    {"i18nKey":"i18nKeyErrorMessagePersonDetail","type":"error"}
+                 ]
+            }           
+            
+            
             
 ## Recovery password [/account/recoverynewpassword]
 ### new password [POST]
