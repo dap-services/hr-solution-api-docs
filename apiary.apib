@@ -681,3 +681,157 @@ Get the list of persons for hr4 model and specific user.
             "position": "Profesionální účastník karaoke",
             "diagnostic_time":"1409562655000"
             }]
+            
+            
+## HR4 person results [/account/{id}/hr4/person/{id_person}/{id_result}]
+
+### Operation [GET]
+Get the list of person's results for hr4 model and specific user.
+
+#### List person's results
+
++ Request (application/json)
+
+    + Headers
+
+            Access-Control-Allow-Origin: *
+
++ Response 200 (application/json)
+
+    + Headers
+
+            Access-Control-Allow-Origin: *
+
+    + Body
+
+            [{
+            "result_id": 1,
+            "result_date": "6.2.2014",
+            "result_diagnosticurl": "http://scanner.forHrsolution.cz?code=255662",
+            "status": "LICENCE"
+            },{
+            "result_id": 2,
+            "result_date": "6.3.2014",
+            "result_diagnosticurl": "http://scanner.forHrsolution.cz?code=255662",
+            "status": "NORESULT"
+            },{
+            "result_id": 3,
+            "result_date": "24.7.2014",
+            "result_diagnosticurl": "http://scanner.forHrsolution.cz?code=255662",
+            "status": "NOLICENCE"
+            },{
+            "result_id": 4,
+            "result_date": "16.11.2014",
+            "result_diagnosticurl": "http://scanner.forHrsolution.cz?code=255662",
+            "status": "PAIDLICENCE"
+            }]
+            
++ Response 400 (application/json)
+
+    + Headers
+
+            Accept: application/json
+            Access-Control-Allow-Origin: *
+
+    + Body
+
+            {
+                 "messages": [
+                    {"i18nKey":"i18nKeyErrorMessagePersonDetail","type":"error"}
+                 ]
+            }           
+            
+### Operation [POST]
+Share person's result
+
+#### Share person's result
+
++ Request (application/json)
+
+    + Headers
+
+            Access-Control-Allow-Origin: *
+            
+    + Body
+
+             {
+                "EmailsToShare": "person@seznam.cz,person@seznam.cz,person@seznam.cz"
+                 
+            }
+
++ Response 200 (application/json)
+
+    + Headers
+
+            Access-Control-Allow-Origin: *
+
+    + Body
+
+            {
+                "messages": [
+                {"i18nKey":"i18nKeySuccessMessagePersonDetailShare","type":"success"}
+                ]
+            }    
+            
++ Response 400 (application/json)
+
+    + Headers
+
+            Accept: application/json
+            Access-Control-Allow-Origin: *
+
+    + Body
+
+            {
+                 "messages": [
+                    {"i18nKey":"i18nKeyErrorMessagePersonDetailShare","type":"error"}
+                 ]
+            }    
+            
+### Operation [PUT]
+Send email for diagnostic to the person
+
+#### Send email whith scaner url
+
++ Request (application/json)
+
+    + Headers
+
+            Access-Control-Allow-Origin: *
+            
+    + Body
+
+             {
+                "person_email": "person@seznam.cz"
+                 
+            }
+
++ Response 200 (application/json)
+
+    + Headers
+
+            Access-Control-Allow-Origin: *
+
+    + Body
+
+            {
+                "messages": [
+                {"i18nKey":"i18nKeySuccessMessagePersonDetailShare","type":"success"}
+                ]
+            }    
+            
++ Response 400 (application/json)
+
+    + Headers
+
+            Accept: application/json
+            Access-Control-Allow-Origin: *
+
+    + Body
+
+            {
+                 "messages": [
+                    {"i18nKey":"i18nKeyErrorMessagePersonDetailShare","type":"error"}
+                 ]
+            }           
+                        
