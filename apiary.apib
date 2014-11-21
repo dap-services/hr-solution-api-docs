@@ -834,4 +834,46 @@ Send email for diagnostic to the person
                     {"i18nKey":"i18nKeyErrorMessagePersonDetailShare","type":"error"}
                  ]
             }           
-                        
+              
+### Operation [DELETE]
+Delete result of person
+
+#### Delete result of person
+
++ Request (application/json)
+
+    + Headers
+
+            Access-Control-Allow-Origin: *
+            
+    
+
++ Response 200 (application/json)
+
+    + Headers
+
+            Access-Control-Allow-Origin: *
+
+    + Body
+
+            {
+                "messages": [
+                {"i18nKey":"i18nKeySuccessMessagePersonDetailShare","type":"success"}
+                ]
+            }    
+            
++ Response 400 (application/json)
+
+    + Headers
+
+            Accept: application/json
+            Access-Control-Allow-Origin: *
+
+    + Body
+
+            {
+                 "messages": [
+                    {"i18nKey":"i18nKeyErrorMessagePersonDetailShare","type":"error"}
+                 ]
+            }           
+                                  
