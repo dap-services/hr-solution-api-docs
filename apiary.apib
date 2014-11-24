@@ -463,6 +463,8 @@ Description.
     + Headers
 
             Access-Control-Allow-Origin: *
+             X-License-Hr4: true
+            Access-Control-Expose-Headers: X-License-Hr4
 
     + Body
             
@@ -487,9 +489,9 @@ Description.
     + Body
 
              {
-                 "messages": [
+                 "messages":  
                     {"i18nKey":"i18nKeyErrorMessagePersonDetail","type":"error"}
-                 ]
+                  
             }
             
             
@@ -526,9 +528,9 @@ Description.
     + Body
             
             {
-                 "messages": [
+                 "messages":  
                     {"i18nKey":"i18nKeySuccessMessagePersonDetailUpdate","type":"success"}
-                 ]
+                  
             }    
             
             
@@ -545,9 +547,9 @@ Description.
     + Body
 
             {
-                 "messages": [
+                 "messages":  
                     {"i18nKey":"i18nKeyErrorMessagePersonDetail","type":"error"}
-                 ]
+                  
             }           
             
 ### Operation [POST]
@@ -576,9 +578,9 @@ Description.
     + Body
             
             {
-                 "messages": [
+                 "messages": 
                     {"i18nKey":"i18nKeySuccessMessagePersonDetailDeleted","type":"success"}
-                 ]
+                  
             }    
             
             
@@ -595,9 +597,9 @@ Description.
     + Body
 
             {
-                 "messages": [
+                 "messages": 
                     {"i18nKey":"i18nKeyErrorMessagePersonDetail","type":"error"}
-                 ]
+                  
             }           
             
             
@@ -836,9 +838,9 @@ Send email for diagnostic to the person
     + Body
 
             {
-                "messages": [
+                "messages":  
                 {"i18nKey":"i18nKeySuccessMessagePersonDetailShare","type":"success"}
-                ]
+                 
             }    
             
 + Response 400 (application/json)
@@ -853,9 +855,9 @@ Send email for diagnostic to the person
     + Body
 
             {
-                 "messages": [
+                 "messages":  
                     {"i18nKey":"i18nKeyErrorMessagePersonDetailShare","type":"error"}
-                 ]
+                  
             }           
               
 ### Operation [DELETE]
@@ -882,9 +884,9 @@ Delete result of person
     + Body
 
             {
-                "messages": [
+                "messages":  
                 {"i18nKey":"i18nKeySuccessMessagePersonDetailShare","type":"success"}
-                ]
+                 
             }    
             
 + Response 400 (application/json)
@@ -899,8 +901,8 @@ Delete result of person
     + Body
 
             {
-                 "messages": [
+                 "messages":  
                     {"i18nKey":"i18nKeyErrorMessagePersonDetailShare","type":"error"}
-                 ]
+                  
             }           
                                   
