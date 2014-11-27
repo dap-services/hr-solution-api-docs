@@ -77,6 +77,7 @@ Description.
             {
                "first_name": "first_name  last_name",
                 "email": "email",
+                "phone": "333 666 999",
                 "login": "login_name",
                 "password": "PASSWORD",
                 "verify_password": "PASSWORD"
@@ -904,4 +905,119 @@ Delete result of person
                     {"i18nKey":"i18nKeyErrorMessagePersonDetailDeleteResult","type":"error"}
                   ]
             }           
+                  
+                  
+                  
+## HR4 New Consultation [/account/{id}/hr4/newconsultation]
+
+### Operation [GET]
+Get New Consultation details for hr4 model.
+
+#### New Consultation details
+
++ Request (application/json)
+
+    + Headers
+
+            Access-Control-Allow-Origin: *
+
++ Response 200 (application/json)
+
+    + Headers
+
+            Access-Control-Allow-Origin: *
+            X-License-Hr4: true
+            Access-Control-Expose-Headers: X-License-Hr4
+
+    + Body
+
+            {
+            "consultationForms": [ 
+             {"title":"Telefon","code":"PHONE"},
+             {"title":"Osobně v DAP Services","code":"INPERSONDAPS"},
+             {"title":"Osobně u nás","code":"INPERSON"}
+ 
+             ],
+             "consultationLenght":"30 min",
+             "description":"Morbi efficitur risus at elit hendrerit ultricies. 
+                Proin bibendum urna vitae velit vulputate, vel facilisis odio consequat. 
+                Nulla euismod mi in enim euismod, vel tincidunt magna vulputate. 
+                Duis sed est sit amet diam consequat sagittis quis eget lacus. 
+                Nullam nec velit faucibus, tempor nulla id, fringilla nibh. 
+                Sed placerat ultrices sapien in posuere. Maecenas condimentum sapien."
+             }
+            
++ Response 400 (application/json)
+
+    + Headers
+
+            Accept: application/json
+            Access-Control-Allow-Origin: *
+            X-License-Hr4: true
+            Access-Control-Expose-Headers: X-License-Hr4
+
+    + Body
+
+            {
+                 "messages": [
+                    {"i18nKey":"i18nKeyErrorMessageNewConsultation","type":"error"}
+                 ]
+            }           
+            
+### Operation [POST]
+Share person's result
+
+#### Order New Consultation
+
++ Request (application/json)
+
+    + Headers
+
+            Access-Control-Allow-Origin: *
+            
+    + Body
+
+             {
+                "person_id": "23",
+                "result_id": "23455",
+                "user_id": "12",
+                "consultation_date": "12.11.20014 13:30",
+                "consultation_form": "INPERSONDAPS",
+                "consultation_Lenght": "30 min"
+                 
+            }
+
++ Response 201 (application/json)
+
+    + Headers
+
+            Access-Control-Allow-Origin: *
+            X-License-Hr4: true
+            Access-Control-Expose-Headers: X-License-Hr4
+
+    + Body
+
+            {
+                "messages": [
+                {"i18nKey":"i18nKeySuccessMessageNewConsultationCreated","type":"success"}
+                ]
+            }    
+            
++ Response 400 (application/json)
+
+    + Headers
+
+            Accept: application/json
+            Access-Control-Allow-Origin: *
+            X-License-Hr4: true
+            Access-Control-Expose-Headers: X-License-Hr4
+
+    + Body
+
+            {
+                 "messages": [
+                    {"i18nKey":"i18nKeyErrorMessageNewConsultationNotCreated","type":"error"}
+                 ]
+            }    
+                              
                                   
