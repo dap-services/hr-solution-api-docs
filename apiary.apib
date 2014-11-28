@@ -1013,6 +1013,103 @@ Share person's result
                  "messages": [
                     {"i18nKey":"i18nKeyErrorMessageNewConsultationNotCreated","type":"error"}
                  ]
-            }    
+            }   
+            
+## Get module license configuration [/account/{id}/order/module/{id_module}]
+
+### Operation [GET]
+Get the list of possible licences for module
+
+#### List person's results
+
++ Request (application/json)
+
+    + Headers
+
+            Access-Control-Allow-Origin: *
+
++ Response 200 (application/json)
+
+    + Headers
+
+            Access-Control-Allow-Origin: *
+            
+    + Body
+
+            {
+              "licences": [
+                {
+                  "type": 1,
+                  "resource_name":"half_year_license",
+                  "consultation_hours": 3,
+                  "training": [
+                    {
+                      "id": 1,
+                      "training_name":"training_1",
+                      "price": 45,
+                      "required": true
+                    },
+                    {
+                      "id": 2,
+                      "training_name":"training_2",
+                      "price": 35,
+                      "required": true
+                    },
+                    {
+                      "id": 3,
+                      "training_name":"training_3",
+                      "price": 30,
+                      "required": false
+                    },
+                    {
+                      "id": 4,
+                      "training_name":"training_4",
+                      "price": 5,
+                      "required": false
+                    }
+                  ]
+                },
+                {
+                  "type": 2,
+                  "resource_name":"single_license",
+                  "consultation_hours": 1,
+                  "training": [
+                    {
+                      "id": 5,
+                      "training_name":"training_5",
+                      "price": 15,
+                      "required": true
+                    },
+                    {
+                      "id": 6,
+                      "training_name":"training_6",
+                      "price": 5,
+                      "required": false
+                    },
+                    {
+                      "id": 7,
+                      "training_name":"training_7",
+                      "price": 20,
+                      "required": false
+                    }
+                  ]
+                }
+              ]
+            }
+            
++ Response 400 (application/json)
+
+    + Headers
+
+            Accept: application/json
+            Access-Control-Allow-Origin: *
+
+    + Body
+
+            {
+                 "messages": [
+                    {"i18nKey":"i18nKeyErrorMessageModuleLicense","type":"error"}
+                 ]
+            }          
                               
                                   
