@@ -620,11 +620,21 @@ password - new password for user
     + Body
 
             {
-                "code": "CODE"
-                "password": "PASSWORD"
+                "code": "CODE",
+                "password": "PASSWORD",
+                "confirmedPassword": "CONFIRMED_PASSWORD"
             }
             
-+ Response 204
++ Response 200
+
+    + Body
+    
+            {
+                "messages": {
+                                "i18nKey": "passwordRecoveryNewPasswordSuccess",
+                                "type": "success"
+                            }
+            }
 
 + Response 400
 
