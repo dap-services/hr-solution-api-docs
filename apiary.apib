@@ -388,6 +388,66 @@ Description.
             "status": "PAID"
             }]
             
+### Operation [PUT]
+Create a new license orders
+
+#### Save new license order
+
++ Request (application/json)
+
+    + Headers
+
+            Access-Control-Allow-Origin: *
+            
+    + Body
+
+            {
+                "invoice_items": {
+                    "name": 3   
+                },
+                "modules":[{
+                    "module_id":1,
+                    "license_id":1,
+                    "training":[1,2],
+                    "consult_hours":5
+                    },
+                    {
+                    "module_id":2,
+                    "license_id":1,
+                    "training":[3,4],
+                    "consult_hours":0
+                    }]
+            }
+
++ Response 201 (application/json)
+
+    + Headers
+
+            Access-Control-Allow-Origin: *
+
+    + Body
+
+            {
+                "messages": [
+                {"i18nKey":"i18nKeySuccessMessageNewOrderCreated","type":"success"}
+                ]
+            }    
+            
++ Response 400 (application/json)
+
+    + Headers
+
+            Accept: application/json
+            Access-Control-Allow-Origin: *
+
+    + Body
+
+            {
+                 "messages": [
+                    {"i18nKey":"i18nKeyErrorMessageNewOrderNotCreated","type":"error"}
+                 ]
+            }   
+            
 ## User's password change [/account/passwordchange]
 ### Operation [POST]
 Description.
@@ -1128,6 +1188,4 @@ Get the list of possible licences for module
                  "messages": [
                     {"i18nKey":"i18nKeyErrorMessageModuleLicense","type":"error"}
                  ]
-            }          
-                              
-                                  
+            }     
