@@ -1202,12 +1202,14 @@ Return unique url of diagnostic, API must manage all generated url create, delet
 
 #### Generating diagnostic url
 
-+ Response 200 (application/json)
-            
++ Request (application/json)
+
     + Headers
 
             Access-Control-Allow-Origin: *
 
++ Response 200 (application/json)
+            
     + Body
     
             {
@@ -1228,7 +1230,6 @@ If checking diagnostic url fail it return some 40X to show error message or page
     + Headers
 
             Access-Control-Allow-Origin: *
-            Accept: application/json
 
     + Body
         
@@ -1251,10 +1252,6 @@ If checking diagnostic url fail it return some 40X to show error message or page
     
 + Response 200  (application/json)
 
-    + Headers
-
-            Access-Control-Allow-Origin: *
-
     + Body
     
             {
@@ -1264,7 +1261,3 @@ If checking diagnostic url fail it return some 40X to show error message or page
             }
 
 + Response 400  (application/json)
-
-    + Headers
-
-            Access-Control-Allow-Origin: *
