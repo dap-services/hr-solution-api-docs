@@ -1217,7 +1217,7 @@ Return unique url of diagnostic, API must manage all generated url create, delet
     + Body
     
             {
-                diagnosticUrl: 'https://www.some.new/url/for/diagnostic'
+                'diagnosticUrl': 'https://www.some.new/url/for/diagnostic'
             }
 
 ## create new persons with new diagnostics [/account/{id}/hr4/persons/create]
@@ -1238,18 +1238,18 @@ If checking diagnostic url fail it return some 40X to show error message or page
     + Body
         
             {
-                words: ['Me', 'Work', 'Missile', 'Grandmother'],
-                persons: [
+                'words': ['Me', 'Work', 'Missile', 'Grandmother'],
+                'persons': [
                     {
-                        firstName: 'Karl',
-                        lastName: 'Schlanshamer',
-                        email: 'karlAusDeutchland@germany.de',
-                        diagnosticUrl: 'https://www.some.new/url/for/diagnostic/6asd56a4f'
+                        'firstName': 'Karl',
+                        'lastName': 'Schlanshamer',
+                        'email': 'karlAusDeutchland@germany.de',
+                        'diagnosticUrl': 'https://www.some.new/url/for/diagnostic/6asd56a4f'
                     },{
-                        firstName: 'Sergei',
-                        lastName: 'Dimitrienko',
-                        email: dinitriSergei@motherrussia.ru,
-                        diagnosticUrl: 'https://www.some.new/url/for/diagnostic/asf3w4687'
+                        'firstName': 'Sergei',
+                        'lastName': 'Dimitrienko',
+                        'email': 'dinitriSergei@motherrussia.ru',
+                        'diagnosticUrl': 'https://www.some.new/url/for/diagnostic/asf3w4687'
                     }
                 ]
             }
