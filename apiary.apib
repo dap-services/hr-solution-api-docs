@@ -1217,7 +1217,7 @@ Return unique url of diagnostic, API must manage all generated url create, delet
     + Body
     
             {
-                'diagnosticUrl': 'https://www.some.new/url/for/diagnostic'
+                "diagnosticUrl": "https://www.some.new/url/for/diagnostic"
             }
 
 ## create new persons with new diagnostics [/account/{id}/hr4/persons/create]
@@ -1232,34 +1232,34 @@ If checking diagnostic url fail it return some 40X to show error message or page
 + Request (application/json)
 
     + Headers
-
+    
             Access-Control-Allow-Origin: *
 
     + Body
-        
+
             {
-                'words': ['Me', 'Work', 'Missile', 'Grandmother'],
-                'persons': [
+                "words": ["Me", "Work", "Missile", "Grandmother"],
+                "persons": [
                     {
-                        'firstName': 'Karl',
-                        'lastName': 'Schlanshamer',
-                        'email': 'karlAusDeutchland@germany.de',
-                        'diagnosticUrl': 'https://www.some.new/url/for/diagnostic/6asd56a4f'
+                        "firstName": "Karl",
+                        "lastName": "Schlanshamer",
+                        "email": "karlAusDeutchland@germany.de",
+                        "diagnosticUrl": "https://www.some.new/url/for/diagnostic/6asd56a4f"
                     },{
-                        'firstName': 'Sergei',
-                        'lastName': 'Dimitrienko',
-                        'email': 'dinitriSergei@motherrussia.ru',
-                        'diagnosticUrl': 'https://www.some.new/url/for/diagnostic/asf3w4687'
+                        "firstName": "Sergei",
+                        "lastName": "Dimitrienko",
+                        "email": "dinitriSergei@motherrussia.ru",
+                        "diagnosticUrl": "https://www.some.new/url/for/diagnostic/asf3w4687"
                     }
                 ]
             }
-    
+
 + Response 200  (application/json)
 
     + Headers
-
+    
             Access-Control-Allow-Origin: *
-
+    
     + Body
     
             {
@@ -1267,9 +1267,9 @@ If checking diagnostic url fail it return some 40X to show error message or page
                     {"i18nKey":"hr4_new_person_submit_successful","type":"success"}
                  ]
             }
-
+    
 + Response 400  (application/json)
-
+    
     + Headers
-
+    
             Access-Control-Allow-Origin: *
