@@ -1189,3 +1189,55 @@ Get the list of possible licences for module
                     {"i18nKey":"i18nKeyErrorMessageModuleLicense","type":"error"}
                  ]
             }     
+
+#Group new person
+## generate new diagnostic url[/account/{id}/hr4/persons/getNewDiagnosticUrl]
+### Operation [GET]
+Return unique url of diagnostic, API must manage all generated url create, delete, ...
+
+#### Generating diagnostic url
+
++ Response 200 (application/json)
+
+    + Body
+        {
+            diagnosticUrl: 'https://www.some.new/url/for/diagnostic'
+        }
+
+## create new persons with new diagnostics[/account/{id}/hr4/persons/create]
+### Operation [POST]
+Create new persons, create new diagnostics for each person and check if diagnostics urls is unique. Sends email to selected persons.
+If checking diagnostic url fail it return some 40X to show error message or page with message to contact admin.
+
+#### complete creating new persons
+
++ Request (application/json)
+
+    + Body
+        {
+            words: ['Me', 'Work', 'Missile', 'Grandmother'],
+            persons: [
+                {
+                    firstName: 'Karl',
+                    lastName: 'Schlanshamer',
+                    email: 'karlAusDeutchland@germany.de',
+                    diagnosticUrl: 'https://www.some.new/url/for/diagnostic/6asd56a4f'
+                },{
+                    firstName: 'Sergei',
+                    lastName: 'Dimitrienko',
+                    email: dinitriSergei@motherrussia.ru,
+                    diagnosticUrl: 'https://www.some.new/url/for/diagnostic/asf3w4687'
+                }
+            ]
+        }
+    
++ Response 200  (application/json)
+
+    + Body
+            {
+                 "messages": [
+                    {"i18nKey":"hr4_new_person_submit_successful","type":"success"}
+                 ]
+            }
+
++ Response 400  (application/json)
