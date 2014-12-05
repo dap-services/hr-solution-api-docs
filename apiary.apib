@@ -1191,10 +1191,13 @@ Get the list of possible licences for module
             }     
 
 #Group new person
+
 Page for create new persons and diagnostic (/hr4/newPersons)
 
 ## generate new diagnostic url[/account/{id}/hr4/persons/getNewDiagnosticUrl]
+
 ### Operation [GET]
+
 Return unique url of diagnostic, API must manage all generated url create, delete, ...
 
 #### Generating diagnostic url
@@ -1207,7 +1210,9 @@ Return unique url of diagnostic, API must manage all generated url create, delet
         }
 
 ## create new persons with new diagnostics[/account/{id}/hr4/persons/create]
+
 ### Operation [POST]
+
 Create new persons, create new diagnostics for each person and check if diagnostics urls is unique. Sends email to selected persons.
 If checking diagnostic url fail it return some 40X to show error message or page with message to contact admin.
 
