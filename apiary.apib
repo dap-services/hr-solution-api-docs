@@ -494,7 +494,9 @@ Description.
     + Body
     
             {
-             "response":"User account updated."
+                "messages": [
+                    {"i18nKey":"i18nKeySuccessUserAccountUpdate","type":"success"}
+                ]
             }
 
 + Response 400 (application/json)
@@ -506,9 +508,10 @@ Description.
     + Body
     
             {
-             "response":"An error occured."
+                "messages": [
+                    {"i18nKey":"i18nKeyErrorUserUpdate","type":"error"}
+                ]
             }
-
             
 ## Recovery password [/account/recoverpassword]
 ### I need new password [POST]
