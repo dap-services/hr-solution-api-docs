@@ -1067,7 +1067,7 @@ Get the list of person's results for hr4 model and specific user.
                  "messages": [
                     {"i18nKey":"i18nKeyErrorMessagePersonDetail","type":"error"}
                  ]
-            }           
+            } 
             
 ### Operation [POST]
 Share person's result
@@ -1515,4 +1515,48 @@ If checking diagnostic url fail it return some 40X to show error message or page
     + Headers
     
             Access-Control-Allow-Origin: *
+
+
+
+## Diagnostic [/{id}/hr4/diagnostic/{idr}/words]
+
+### Operation [GET]
+Get the list of words from diagnostic.
+
+#### List of words by resultId
+
++ Request (application/json)
+
+    + Headers
+
+            Access-Control-Allow-Origin: *
+
++ Response 200 (application/json)
+
+    + Headers
+
+            Access-Control-Allow-Origin: *
+            X-License-Hr4: true
+            Access-Control-Expose-Headers: X-License-Hr4
+
+    + Body
+
+            ["Testování", "Krev", "Já", "Nátlak"]
+            
++ Response 400 (application/json)
+
+    + Headers
+
+            Accept: application/json
+            Access-Control-Allow-Origin: *
+            X-License-Hr4: true
+            Access-Control-Expose-Headers: X-License-Hr4
+
+    + Body
+
+            {
+                 "messages": [
+                    {"i18nKey":"i18nKeyErrorMessagePersonDetail","type":"error"}
+                 ]
+            }
 
