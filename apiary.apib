@@ -1049,7 +1049,7 @@ Get the list of person's results for hr4 model and specific user.
             "result_id": 4,
             "result_date": "16.11.2014",
             "result_diagnosticurl": "http://scanner.forHrsolution.cz?code=255662",
-            "status": "PAIDLICENCE"
+            "status": "LICENCE"
             }]
             
 + Response 400 (application/json)
@@ -1560,3 +1560,65 @@ Get the list of words from diagnostic.
                  ]
             }
 
+# Group result            
+## Vystup pro HR4 format 1 [/result/1]
+### Result 1 [GET]
+
++ Request 
+
+            {
+                "scan_data_ids":[4343]
+            }
+            
++ Response 200
+
+            {
+                "user":{"name_surname":"John Dove","date_birthday":1234567890123},
+                "trait":[
+                    {"value":90,"text":"trait1_text1_i18nkey","color":"GREEN","warning":true},
+                    {"value":15,"text":"trait2_text3_i18nkey","color":"RED","warning":false},
+                    {"value":55,"text":"trait3_text3_i18nkey","color":"YELLOW","warning":false},
+                    {"value":65,"text":"trait4_text3_i18nkey","color":"RED","warning":false},
+                    {"value":45,"text":"trait5_text3_i18nkey","color":"YELLOW","warning":false},
+                    {"value":35,"text":"trait6_text3_i18nkey","color":"YELLOW","warning":false},
+                    {"value":20,"text":"trait7_text3_i18nkey","color":"RED","warning":false},
+                    {"value":5,"text":"trait8_text3_i18nkey","color":"RED","warning":false},
+                    {"value":100,"text":"trait9_text3_i18nkey","color":"GREEN","warning":true},
+                    {"value":0,"text":"trait10_text3_i18nkey","color":"RED","warning":false},
+                    {"value":68,"text":"trait11_text3_i18nkey","color":"GREEN","warning":false},
+                    {"value":73,"text":"trait12_text3_i18nkey","color":"GREEN","warning":false}
+                ],
+                "model":["model1i18key","model2i18key"],
+                "role":[
+                    {"name":"namei18nkey1","text":["texti18nkey1"]},
+                    {"name":"namei18nkey2","text":["texti18nkey2"]},
+                    {"name":"namei18nkey3","text":["texti18nkey3"]},
+                    {"name":"namei18nkey4","text":["texti18nkey4"]},
+                    {"name":"namei18nkey5","text":["texti18nkey5"]},
+                    {"name":"namei18nkey6","text":["texti18nkey6"]},
+                    {"name":"namei18nkey7","text":["texti18nkey7"]},
+                    {"name":"namei18nkey8","text":["texti18nkey8"]},
+                    {"name":"namei18nkey9","text":["texti18nkey9"]},
+                    {"name":"namei18nkey10","text":["texti18nkey10"]}
+                ],
+                "assigment":["assigmenti18key1","assigmenti18key2"],
+                "motivation":{"ideal":["Pracovní prostředí"],
+                                "motivation":["Týmová spolupráce"],
+                                "normal":["Zelená barva"],
+                                "stress":["Stres"],
+                                "destroy":["Fialová barva"]
+                }
+            }
+            
++ Response 400 
+
+    + Header
+
+            Access-Control-Allow-Origin: *
+
+    + Body
+
+            {
+                "messages": 
+                    {"i18nKey":"result_error_code","type":"error"}
+            }         
