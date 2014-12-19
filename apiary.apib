@@ -556,6 +556,18 @@ a code je dlouhy retezec pro identifikaci uzivatele
 ## Users Login [/account/login]
 ### Login User [POST]
 
++ Request (application/json)
+    + Headers
+
+             Access-Control-Allow-Origin: *
+             
+    + Body
+    
+            {
+               "login": "user@yourdomain.com",
+               "password": "good_password",
+                 
+            }
 + Response 200 (application/json)
 
     + Header
@@ -565,8 +577,11 @@ a code je dlouhy retezec pro identifikaci uzivatele
     + Body
             
             {
-                "login": "user@yourdomain.com",
-                "password": "good_password",
+                "user_id": 12312334,
+                "token": "security_token",
+                "role":["admin","user","consultant","businessman"],
+                "license":["hr1","hr2","hr3","hr4","hr5"],
+                "name_surname":"John Black"
             }
 
             
