@@ -583,8 +583,19 @@ a code je dlouhy retezec pro identifikaci uzivatele
                 "license":["hr1","hr2","hr3","hr4","hr5"],
                 "name_surname":"John Black"
             }
-
             
+## Users Logout [/account/logout]
+### Logout User [POST]
+
++ Request (application/json)
+    + Headers
+
+             Access-Control-Allow-Origin: *
+             X-Auth-Token: AuthSub token="aaa-asd-sfsd-123"
+    
++ Response 200 (application/json)
++ Response 401 (application/json)
+
 ## Users 201 message [/test/messages201]
 ### Users 201 message [GET]
             
