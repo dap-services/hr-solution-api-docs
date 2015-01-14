@@ -791,13 +791,13 @@ Description.
 
             Order invoice
 
-## Person detail [/account/{user_id}/hr4/person/{person_id}]
+## Person detail  [/account/{user_id}/hr4/person/{person_id}]
 
 ### Operation [GET]
 
 Description.
 
-#### Show Person detail
+#### Show Person detail  
 
 + Request (application/json)
 
@@ -841,7 +841,7 @@ Description.
                     {"i18nKey":"i18nKeyErrorMessagePersonDetail","type":"error"}
                   
             }
-            
+          
             
 ### Operation [PUT]
 
@@ -899,7 +899,7 @@ Description.
                   
             }           
             
-### Operation [POST]
+### Operation [DELETE]
 
 Description.
 
@@ -1066,7 +1066,7 @@ Get the list of persons for hr4 model and specific user.
             }
 
             
-## HR4 person results [/account/{id}/hr4/person/{id_person}/{id_result}]
+## HR4 person records [/account/{id}/hr4/person/{id_person}/records]
 
 ### Operation [GET]
 Get the list of person's results for hr4 model and specific user.
@@ -1127,7 +1127,9 @@ Get the list of person's results for hr4 model and specific user.
                     {"i18nKey":"i18nKeyErrorMessagePersonDetailResults","type":"error"}
                  ]
             } 
-            
+
+## HR4 person records [/account/{id}/hr4/person/{person_id}/share/{id_record}]
+
 ### Operation [POST]
 Share person's result
 
@@ -1178,6 +1180,8 @@ Share person's result
                     {"i18nKey":"i18nKeyErrorMessagePersonDetailShare","type":"error"}
                  ]
             }    
+ 
+## HR4 person records [/account/{id}/hr4/person/{person_id}/sendscannerurl]
             
 ### Operation [PUT]
 Send email for diagnostic to the person
@@ -1229,7 +1233,9 @@ Send email for diagnostic to the person
                     {"i18nKey":"i18nKeyErrorMessagePersonDetailDiagnosticEmail","type":"error"}
                   ] 
             }           
-              
+
+## HR4 person records [/account/{id}/hr4/person/{person_id}/delete/{id_record}]
+             
 ### Operation [DELETE]
 Delete result of person
 
