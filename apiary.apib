@@ -533,6 +533,20 @@ a code je dlouhy retezec pro identifikaci uzivatele
 
 + Response 204
 
++ Response 400 (Bad Request)
+
+    + Header
+    
+            Access-Control-Allow-Origin: *
+            
+    + Body
+    
+            {
+                "messages": [
+                    {"i18nKey":"account_password_recovery_error","type":"error"}
+                ]
+            }    
+
 
 ## Users 401 messages [/test/messages]
 ### Users 401 messages [GET]
