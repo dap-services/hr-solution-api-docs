@@ -1142,8 +1142,9 @@ Get the list of persons for hr4 model and specific user.
                 ]
             }
 
-            
-## HR4 person records [/account/{id}/hr4/person/{id_person}/records]
+# Group  HR4 Person Records
+
+## HR4 person records List person's records [/account/{id}/hr4/person/{id_person}/records]
 
 ### Operation [GET]
 Get the list of person's results for hr4 model and specific user.
@@ -1205,7 +1206,7 @@ Get the list of person's results for hr4 model and specific user.
                  ]
             } 
 
-## HR4 person records [/account/{id}/hr4/person/{person_id}/share/{id_record}]
+## HR4 person records Share person's result [/account/{id}/hr4/person/{person_id}/share/{id_record}]
 
 ### Operation [POST]
 Share person's result
@@ -1258,9 +1259,9 @@ Share person's result
                  ]
             }    
  
-## HR4 person records [/account/{id}/hr4/person/{person_id}/sendscannerurl]
+## HR4 person records DiagnosticUrl email [/account/{id}/hr4/person/{person_id}/sendscannerurl]
             
-### Operation [PUT]
+### Operation [POST]
 Send email for diagnostic to the person
 
 #### Send email whith scaner url
@@ -1311,7 +1312,7 @@ Send email for diagnostic to the person
                   ] 
             }           
 
-## HR4 person records [/account/{id}/hr4/person/{person_id}/delete/{id_record}]
+## HR4 person records delete record [/account/{id}/hr4/person/{person_id}/delete/{id_record}]
              
 ### Operation [DELETE]
 Delete result of person
@@ -1359,7 +1360,7 @@ Delete result of person
                   ]
             }           
                   
-                  
+# Group Consultation              
                   
 ## HR4 New Consultation [/account/{id}/hr4/newconsultation]
 
@@ -1467,6 +1468,8 @@ Share person's result
                     {"i18nKey":"i18nKeyErrorMessageNewConsultationNotCreated","type":"error"}
                  ]
             }   
+ 
+# Group  modules 
             
 ## Get module license configuration [/account/{id}/order/module/{id_module}]
 
