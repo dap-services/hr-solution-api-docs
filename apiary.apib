@@ -112,7 +112,70 @@ Description.
              "registration":false
              }
              
+## Potvrzení registrace uživatele [/account/registrationverify]
+
+### Operation [POST]
+
+#### Registrace uživatele
+
++ Request (application/json)
+
+    + Headers
+
+            Accept: application/json
+
+    + Body
+
+            {
+               "profileStatusKey": "key"
+                
+            }
+
+
++ Response 200 (application/json)
+
+    + Headers
+
+            Access-Control-Allow-Origin: *
+
+    + Body
+
+            {
+                "messages": [
+                    {"i18nKey":"i18n_key_succes_registration_verify","type":"success"}
+                ]
+            }
+            
  
+
++ Response 400 (application/json)
+
+    + Headers
+
+            Accept: application/json
+
+    + Body
+
+            {
+                "messages": [
+                    {"i18nKey":"i18n_key_error_registration_verify_input","type":"error"}
+                ]
+            }
+
++ Response 401 (application/json)
+
+    + Headers
+
+            Accept: application/json
+
+    + Body
+
+            {
+                "messages": [
+                    {"i18nKey":"i18n_key_error_registration_verify_auth","type":"error"}
+                ]
+            }
+            
       
 ## Languages Collection [/language]
 
