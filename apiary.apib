@@ -95,8 +95,9 @@ Description.
     + Body
 
             {
-            "response":"Everything is ok",
-            "registration":true
+                "messages": [
+                    {"i18nKey":"i18n_key_succes_registration","type":"success"}
+                ]
             }
  
 
@@ -109,9 +110,10 @@ Description.
     + Body
 
              {
-             "response":"Something is not ok",
-             "registration":false
-             }
+                "messages": [
+                    {"i18nKey":"i18n_key_error_registration_input","type":"error"}
+                ]
+            }
              
 ## Potvrzení registrace uživatele [/account/registrationverify]
 
