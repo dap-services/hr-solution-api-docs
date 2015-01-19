@@ -1650,7 +1650,7 @@ If checking diagnostic url fail it return some 40X to show error message or page
 ### Operation [GET]
 Get the list of words from diagnostic.
 
-#### List of words by resultId
+#### List of words by recordId
 
 + Request (application/json)
 
@@ -1686,6 +1686,50 @@ Get the list of words from diagnostic.
                     {"i18nKey":"i18nKeyErrorMessagePersonDetail","type":"error"}
                  ]
             }
+
+## Diagnostic language [/{id}/hr4/diagnostic/supporteddiagnosticlangs]
+
+### Operation [GET]
+Get the list of supported languages for diagnostic.
+
+#### List of supported languages
+
++ Request (application/json)
+
+    + Headers
+
+            Access-Control-Allow-Origin: *
+
++ Response 200 (application/json)
+
+    + Headers
+
+            Access-Control-Allow-Origin: *
+            X-License-Hr4: true
+            Access-Control-Expose-Headers: X-License-Hr4
+
+    + Body
+
+            ["en", "cs"]
+            
++ Response 400 (application/json)
+
+    + Headers
+
+            Accept: application/json
+            Access-Control-Allow-Origin: *
+            X-License-Hr4: true
+            Access-Control-Expose-Headers: X-License-Hr4
+
+    + Body
+
+            {
+                 "messages": [
+                    {"i18nKey":"i18nKeyErrorMessageDiagnosticLanguages","type":"error"}
+                 ]
+            }
+
+
 
 # Group result            
 ## Vystup pro HR4 format 1 [/result/1]
