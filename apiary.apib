@@ -1606,6 +1606,7 @@ If checking diagnostic url fail it return some 40X to show error message or page
 
             {
                 "words": ["Me", "Work", "Missile", "Grandmother"],
+               "langCode":"en",
                 "persons": [
                     {
                         "sendMail": true,
@@ -1668,7 +1669,10 @@ Get the list of words from diagnostic.
 
     + Body
 
-            ["Testování", "Krev", "Já", "Nátlak"]
+            {
+                "words":  ["Testování", "Krev", "Já", "Nátlak"],
+                "langCode":"cs"
+             }
             
 + Response 400 (application/json)
 
