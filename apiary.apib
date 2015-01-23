@@ -745,7 +745,20 @@ Description.
     
             {
                 "messages": [
-                    {"i18nKey":"i18n_key_error_get_license_list","type":"error"}
+                    {"i18nKey":"i18n_key_error_get_license_list_input","type":"error"}
+                ]
+            }
++ Response 401 (application/json)
+
+    + Headers
+
+            Access-Control-Allow-Origin: *
+
+    + Body
+    
+            {
+                "messages": [
+                    {"i18nKey":"i18n_key_error_get_license_list_auth","type":"error"}
                 ]
             }
 
