@@ -717,22 +717,14 @@ Description.
 
             [{
             "id": 1,
-            "name": "Databáze lidských zdrojů",
             "insert_time": "1.11.2014",
-            "valid_until": "1.1.2015",
-            "status": "WAITING"
-            },{
-            "id": 2,
-            "name": "Správný dílek do týmu",
-            "insert_time": "16.10.2014",
-            "valid_until": "1.1.2015",
-            "status": "INVOICE"
-            },{
-            "id": 3,
-            "name": "Zapracování",
-            "insert_time": "16.10.2014",
-            "valid_until": "16.12.2014",
-            "status": "PAID"
+            "price": "100",
+            "items":{
+                "type": "HR4",
+                "license_type": "ONE_TIME",
+                "licence_status": "WAITING_FOR_PAYMENT",
+                "valid_from": "",
+                "valid_to": "",
             }]
 
 + Response 400 (application/json)
