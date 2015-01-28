@@ -1716,8 +1716,11 @@ Get the list of supported languages for diagnostic.
             Access-Control-Expose-Headers: X-License-Hr4
 
     + Body
-
-            ["en", "cs"]
+    
+            {
+                "supportedDiagnosticLanguages":["en", "cs"],
+                "maxDiagnosticWords":10
+            }
             
 + Response 400 (application/json)
 
