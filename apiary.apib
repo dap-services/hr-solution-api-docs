@@ -1800,3 +1800,61 @@ Get the list of supported languages for diagnostic.
                 "messages": 
                     {"i18nKey":"result_error_code","type":"error"}
             }         
+            
+### Result 2 for email [GET]
+
++ Request 
+
+            {
+                "scan_data_ids":[4343]
+            }
+            
++ Response 200
+
+            {
+                "person":{"name":"John Dove","date":1234567890123},
+                "1":{"description":["model1_i18nkey","model2_i18nkey"]},
+                "2":{"description":["assigment1_i18nkey","assigment2_i18nkey"]},
+                "230":{"value":90,"description":["trait1_text1_i18nkey","trait1_text2_i18nkey"],"color":"GREEN","warning":true},
+                "112":{"value":15,"description":["trait2_text3_i18nkey"],"color":"RED"},
+                "149":{"value":55,"description":["trait3_text3_i18nkey"],"color":"GREEN"},
+                "240":{"value":65,"description":["trait4_text3_i18nkey"],"color":"GREEN"},
+                "121":{"value":45,"description":["trait5_text3_i18nkey"],"color":"GREEN"},
+                "229":{"value":35,"description":["trait6_text3_i18nkey"],"color":"GREEN"},
+                "104":{"value":20,"description":["trait7_text3_i18nkey"],"color":"RED"},
+                "226":{"value":5,"description":["trait8_text3_i18nkey"],"color":"RED"},
+                "132":{"value":100,"description":["trait9_text3_i18nkey"],"color":"GREEN"},
+                "130":{"value":0,"description":["trait10_text3_i18nkey"],"color":"RED"},
+                "170":{"value":68,"description":["trait11_text3_i18nkey"],"color":"GREEN"},
+                "136":{"value":55,"description":["trait12_text3_i18nkey"],"color":"GREEN"},
+                "119":{"value":35,"description":["trait13_text3_i18nkey"],"color":"RED"},
+                "239":{"value":40,"description":["trait14_text3_i18nkey"],"color":"GREEN"},
+                "143":{"value":73,"description":["trait15_text3_i18nkey"],"color":"GREEN"},
+                "148":{"value":67,"description":["trait16_text3_i18nkey"],"color":"GREEN"},
+                "234":{"value":73,"description":["trait17_text3_i18nkey"],"color":"GREEN"},
+                "164":{"value":84,"description":["trait18_text3_i18nkey","trait18_text1_i18nkey"],"color":"GREEN","warning":true},
+                "160":{"value":73,"description":["trait19_text3_i18nkey"],"color":"GREEN"},
+                "127":{"value":100,"description":["trait20_text3_i18nkey","trait20_text1_i18nkey"],"color":"GREEN","warning":true},
+                "235":[{"name":"role1_name_i18nkey","description":["role1_text1_i18nkey"]},
+                    {"name":"role2_name_i18nkey","description":["role2_text1_i18nkey"]},
+                    {"name":"role3_name_i18nkey","description":["role3_text1_i18nkey"]}],
+                "204":{"ideals":["Pracovní prostředí"],
+                        "satisfactors_motivators":["Týmová spolupráce"],
+                        "operators":["Zelená barva"],
+                        "stressors":["Stres"],
+                        "destructors":["Fialová barva"]
+                }
+            }
+            
++ Response 400 
+
+    + Header
+
+            Access-Control-Allow-Origin: *
+
+    + Body
+
+            {
+                "messages": 
+                    {"i18nKey":"result_error_code","type":"error"}
+            }         
