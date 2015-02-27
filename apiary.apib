@@ -58,6 +58,82 @@ Description.
 
  Práce s účtem uživatele.
 
+## Diagnostic language [/account/consultations]
+
+### Operation [GET]
+Get list of users consultations
+
++ Request
+
+    + Headers
+
+            Access-Control-Allow-Origin: *
+            X-Auth-token: {token}
+
++ Response 200 (application/json)
+
+    + Headers
+
+            Access-Control-Allow-Origin: *
+
+    + Body
+    
+            {
+              "consultation_hours_available": 780,
+              "completed_consultation": [
+                {
+                  "consultation_date": 1010231354,
+                  "consultation_form": "CONSULTATION_BY_PHONE",
+                  "person_id": 1,
+                  "first_name": "František",
+                  "last_name": "Vomáčka",
+                  "consultation_length": 90
+                },
+                {
+                  "consultation_date": 101012356454,
+                  "consultation_form": "CONSULTATION_INPERSON_DAPS",
+                  "person_id": 1,
+                  "first_name": "František",
+                  "last_name": "Vomáčka",
+                  "consultation_length": 60
+                },
+                {
+                  "consultation_date": 1013231354,
+                  "consultation_form": "CONSULTATION_INPERSON",
+                  "person_id": 1,
+                  "first_name": "František",
+                  "last_name": "Vomáčka",
+                  "consultation_length": 75
+                }
+              ],
+              "uncompleted_consultation": [
+                {
+                  "consultation_date": 1010231354,
+                  "consultation_form": "CONSULTATION_BY_PHONE",
+                  "person_id": 1,
+                  "first_name": "František",
+                  "last_name": "Vomáčka",
+                  "consultation_length": 90
+                },
+                {
+                  "consultation_date": 101012356454,
+                  "consultation_form": "CONSULTATION_INPERSON_DAPS",
+                  "person_id": 1,
+                  "first_name": "František",
+                  "last_name": "Vomáčka",
+                  "consultation_length": 60
+                },
+                {
+                  "consultation_date": 1013231354,
+                  "consultation_form": "CONSULTATION_INPERSON",
+                  "person_id": 1,
+                  "first_name": "František",
+                  "last_name": "Vomáčka",
+                  "consultation_length": 75
+                }
+              ]
+            }
+
 ## Registrace uživatele [/account/registration]
 
 ### Operation [POST]
@@ -1819,79 +1895,4 @@ Get the list of supported languages for diagnostic.
             {
                 "messages": 
                     {"i18nKey":"result_error_code","type":"error"}
-            }         
-
-## Diagnostic language [/account/consultations]
-
-### Operation [GET]
-Get list of users consultations
-
-+ Request
-
-    + Headers
-
-            Access-Control-Allow-Origin: *
-            X-Auth-token: {token}
-
-+ Response 200 (application/json)
-
-    + Headers
-
-            Access-Control-Allow-Origin: *
-
-    + Body
-    
-            {
-              "completed_consultation": [
-                {
-                  "consultation_date": 1010231354,
-                  "consultation_form": "CONSULTATION_BY_PHONE",
-                  "person_id": 1,
-                  "first_name": "František",
-                  "last_name": "Vomáčka",
-                  "consultation_length": 90
-                },
-                {
-                  "consultation_date": 101012356454,
-                  "consultation_form": "CONSULTATION_INPERSON_DAPS",
-                  "person_id": 1,
-                  "first_name": "František",
-                  "last_name": "Vomáčka",
-                  "consultation_length": 60
-                },
-                {
-                  "consultation_date": 1013231354,
-                  "consultation_form": "CONSULTATION_INPERSON",
-                  "person_id": 1,
-                  "first_name": "František",
-                  "last_name": "Vomáčka",
-                  "consultation_length": 75
-                }
-              ],
-              "uncompleted_consultation": [
-                {
-                  "consultation_date": 1010231354,
-                  "consultation_form": "CONSULTATION_BY_PHONE",
-                  "person_id": 1,
-                  "first_name": "František",
-                  "last_name": "Vomáčka",
-                  "consultation_length": 90
-                },
-                {
-                  "consultation_date": 101012356454,
-                  "consultation_form": "CONSULTATION_INPERSON_DAPS",
-                  "person_id": 1,
-                  "first_name": "František",
-                  "last_name": "Vomáčka",
-                  "consultation_length": 60
-                },
-                {
-                  "consultation_date": 1013231354,
-                  "consultation_form": "CONSULTATION_INPERSON",
-                  "person_id": 1,
-                  "first_name": "František",
-                  "last_name": "Vomáčka",
-                  "consultation_length": 75
-                }
-              ]
             }
