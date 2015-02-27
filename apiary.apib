@@ -1896,3 +1896,45 @@ Get the list of supported languages for diagnostic.
                 "messages": 
                     {"i18nKey":"result_error_code","type":"error"}
             }
+            
+## List of user training [/account/training]
+
+### Operation [GET]
+Get the list of all user training.
+
+#### List of user training
+
++ Request (application/json)
+
+    + Headers
+
+            Access-Control-Allow-Origin: *
+
++ Response 200 (application/json)
+
+    + Headers
+
+            Access-Control-Allow-Origin: *
+            
+    + Body
+    
+            [
+                {
+                    "id": 1,
+                    "training_name": "Training name 1",
+                    "order_date": 112233,
+                    "training_date": 223344,
+                    "price": 1000,
+                    "currency": CZK,
+                    "status": "SCHEDULED"
+                },
+                {
+                    "id": 2,
+                    "training_name": "Training name 2",
+                    "order_date": 112233,
+                    "training_date": 333344,
+                    "price": 1500,
+                    "currency": CZK,
+                    "status": "FINISHED"
+                }
+            ]
