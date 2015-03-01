@@ -1447,7 +1447,7 @@ Delete result of person
                   
 # Group Consultation              
                   
-## HR4 New Consultation [/account/{id}/hr4/newconsultation]
+## HR4 New Consultation [/account/hr4/newconsultation]
 
 ### Operation [GET]
 Get New Consultation details for hr4 model.
@@ -1499,7 +1499,7 @@ Get New Consultation details for hr4 model.
             }           
             
 ### Operation [POST]
-Share person's result
+Order New Consultation
 
 #### Order New Consultation
 
@@ -1770,7 +1770,7 @@ Get the list of words from diagnostic.
                  ]
             }
 
-## Diagnostic language [/{id}/hr4/diagnostic/supporteddiagnosticlangs]
+## Diagnostic language [/hr4/diagnostic/supporteddiagnosticlangs]
 
 ### Operation [GET]
 Get the list of supported languages for diagnostic.
@@ -1795,7 +1795,15 @@ Get the list of supported languages for diagnostic.
     
             {
                 "supportedDiagnosticLanguages":["en", "cs"],
-                "maxDiagnosticWords":10
+                "maxDiagnosticWords":10,
+                "baseDiagnosticWords":[
+                "cs":[
+                    {order: null, id: 21266, value: "Já"},
+                    {order: null, id: 21271, value: "Moje psychika"},
+                    {order: null, id: 21357, value: "Informace"}
+                ]
+                
+                ]
             }
             
 + Response 400 (application/json)
