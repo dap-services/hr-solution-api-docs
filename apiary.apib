@@ -1958,3 +1958,164 @@ Get the list of all user training.
                     "status": "NOT_SCHEDULED"
                 }
             ]
+
+
+# Group  HR3 
+
+## HR3 Group dashboard List [/account/hr3/groups]
+
+### Operation [GET]
+Get the list of groups for hr3 modul and specific user.
+
+#### List of groups
+
++ Request (application/json)
+
+    + Headers
+
+            Access-Control-Allow-Origin: *
+
++ Response 200 (application/json)
+
+    + Headers
+
+            Access-Control-Allow-Origin: *
+            X-License-Hr3: true
+            Access-Control-Expose-Headers: X-License-Hr3
+
+    + Body
+
+            [
+                {
+                "groupID": "12",
+                "groupName": "Company Name 1",
+                "groupCreatedDate": "1412154655000",
+                "groupDiagnosticsCompleted": "6",
+                "groupMembersCount": "8"
+                },
+                {
+                "groupID": "13",
+                "groupName": "Company Name 2",
+                "groupCreatedDate": "1412154655000",
+                "groupDiagnosticsCompleted": "4",
+                "groupMembersCount": "12"
+              },
+              {
+                "groupID": "14",
+                "groupName": "Company Name 3",
+                "groupCreatedDate": "1406884255000",
+                "groupDiagnosticsCompleted": "5",
+                "groupMembersCount": "5"
+              }
+            ]
+            
++ Response 400 (application/json)
+
+    + Headers
+
+            Accept: application/json
+            Access-Control-Allow-Origin: *
+            X-License-Hr3: true
+            Access-Control-Expose-Headers: X-License-Hr3
+
+    + Body
+
+            {
+                 "messages": [
+                    {"i18nKey":"i18nKeyErrorMessage","type":"error"}
+                 ]
+            } 
+
+
+## HR3 Group detail [/account/hr3/group/{group_Id}]
+
+### Operation [GET]
+Show detail of group
+
+#### Detail of group
+
++ Request (application/json)
+
+    + Headers
+
+            Access-Control-Allow-Origin: *
+
++ Response 200 (application/json)
+
+    + Headers
+
+            Access-Control-Allow-Origin: *
+            X-License-Hr3: true
+            Access-Control-Expose-Headers: X-License-Hr3
+
+    + Body
+
+            
+            {
+                "groupID": "12",
+                "groupName": "Company Name 1",
+                "groupCreatedDate": "1412154655000",
+                "groupDiagnosticsCompleted": "3",
+                "groupMembersCount": "5",
+                "groupMembers":[
+                    {
+                    "id": 1,
+                    "name": "František",
+                    "surname": "Vomáčka",
+                    "position": "Kuchař",
+                    "diagnostic_time":"1412154655000"
+                    },{
+                    "id": 2,
+                    "name": "Elizabeth II.",
+                    "surname": "Windsor",
+                    "position": "Queen of the Empire",
+                    "diagnostic_time":null
+                    },{
+                    "id": 3,
+                    "name": "Silvestr",
+                    "surname": "Alone",
+                    "position": "Boxer",
+                    "diagnostic_time":"1406884255000"
+                    },{
+                    "id": 4,
+                    "name": "Arnold",
+                    "surname": "Schwarz",
+                    "position": "Krotitel predátorů",
+                    "diagnostic_time":null
+                    },{
+                    "id": 5,
+                    "name": "Elton",
+                    "surname": "John",
+                    "position": "Profesionální účastník karaoke",
+                    "diagnostic_time":"1409562655000"
+                    }
+                ]
+                
+            } 
+            
++ Response 400 (application/json)
+
+    + Headers
+
+            Accept: application/json
+            Access-Control-Allow-Origin: *
+            X-License-Hr3: true
+            Access-Control-Expose-Headers: X-License-Hr3
+
+    + Body
+
+            {
+                 "messages": [
+                    {"i18nKey":"i18nKeyErrorMessage","type":"error"}
+                 ]
+            } 
+
+
+
+
+
+
+
+
+
+
