@@ -1959,6 +1959,7 @@ Get the list of all user training.
                 }
             ]
 
+
 # Group  HR3 
 
 ## HR3 Groups dashboard List [/hr3/groups]
@@ -2115,7 +2116,6 @@ Create new group of persons
 
             {
                 "name": "New group name",
-                "created_date": "1412154655000",
                 "persons":[
                     {
                     "id": 11,
@@ -2160,7 +2160,7 @@ Create new group of persons
     
             {
                  "messages": [
-                    {"i18nKey":"i18nKeyErrorMessageGroup","type":"success"}
+                    {"i18nKey":"i18nKeyErrorMessageNewGroup","type":"success"}
                  ]
             }
     
@@ -2385,12 +2385,6 @@ Send email invitation for diagnostic whith scaner url
 
             Access-Control-Allow-Origin: *
             
-    + Body
-
-            {
-                "person_email": "person@seznam.cz"
-                 
-            }
 
 + Response 200 (application/json)
 
