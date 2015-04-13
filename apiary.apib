@@ -1959,10 +1959,9 @@ Get the list of all user training.
                 }
             ]
 
-
 # Group  HR3 
 
-## HR3 Group dashboard List [/account/hr3/groups]
+## HR3 Groups dashboard List [/hr3/groups]
 
 ### Operation [GET]
 Get the list of groups for hr3 modul and specific user.
@@ -2051,10 +2050,9 @@ Get the list of groups for hr3 modul and specific user.
             } 
 
  
-## HR3 Group detail [/account/hr3/group/{group_Id}]
+## HR3 Group detail [/hr3/groups/{group_id}]
 
 ### Operation [GET]
-
 Show detail of group
 
 #### Detail of group
@@ -2079,10 +2077,138 @@ Show detail of group
             {
                 "id": "14",
                 "name": "Company Name 3",
+                "created_date": "1412154655000" 
+            } 
+            
++ Response 400 (application/json)
+
+    + Headers
+
+            Accept: application/json
+            Access-Control-Allow-Origin: *
+            X-License-Hr3: true
+            Access-Control-Expose-Headers: X-License-Hr3
+
+    + Body
+
+            {
+                 "messages": [
+                    {"i18nKey":"i18nKeyErrorMessageGroupDetail","type":"error"}
+                 ]
+            } 
+ 
+
+### Operation [POST]
+
+Create new group of persons
+
+#### Create new group
+
++ Request (application/json)
+
+    + Headers
+
+            Access-Control-Allow-Origin: *
+
+
+    + Body
+
+            {
+                "name": "New group name",
                 "created_date": "1412154655000",
-                "diagnostics_completed": "3",
-                "members_count": "5",
-                "members":[
+                "persons":[
+                    {
+                    "id": 11,
+                    "name": "František",
+                    "surname": "Vomáčka",
+                    "position": "Kuchař",
+                    },{
+                    "id": 12,
+                    "name": "Elizabeth II.",
+                    "surname": "Windsor",
+                    "position": "Queen of the Empire",
+                    },{
+                    "id": 13,
+                    "name": "Silvestr",
+                    "surname": "Alone",
+                    "position": "Boxer",
+                    },{
+                    "id": 14,
+                    "name": "Arnold",
+                    "surname": "Schwarz",
+                    "position": "Krotitel predátorů",
+                    },{
+                    "id": 15,
+                    "name": "Elton",
+                    "surname": "John",
+                    "position": "Profesionální účastník karaoke",
+                    }
+                ]
+                
+            } 
+
++ Response 200  (application/json)
+
+    + Headers
+    
+            Accept: application/json
+            Access-Control-Allow-Origin: *
+            X-License-Hr3: true
+            Access-Control-Expose-Headers: X-License-Hr3
+    
+    + Body
+    
+            {
+                 "messages": [
+                    {"i18nKey":"i18nKeyErrorMessageGroup","type":"success"}
+                 ]
+            }
+    
++  Response 400 (application/json)
+
+    + Headers
+
+            Accept: application/json
+            Access-Control-Allow-Origin: *
+            X-License-Hr3: true
+            Access-Control-Expose-Headers: X-License-Hr3
+
+    + Body
+
+            {
+                 "messages": [
+                    {"i18nKey":"i18nKeyErrorMessageNewGroup","type":"error"}
+                 ]
+            } 
+ 
+
+
+# Group  HR3 groups persons 
+
+## HR3 Groups persons [/hr3/groups/{group_id}/persons]
+
+### Operation [GET]
+Get the list of persons in the group.
+
+#### Persons of a group
+
++ Request (application/json)
+
+    + Headers
+
+            Access-Control-Allow-Origin: *
+
++ Response 200 (application/json)
+
+    + Headers
+
+            Access-Control-Allow-Origin: *
+            X-License-Hr3: true
+            Access-Control-Expose-Headers: X-License-Hr3
+
+    + Body
+ 
+            [
                     {
                     "id": 1,
                     "name": "František",
@@ -2115,8 +2241,6 @@ Show detail of group
                     "diagnostic_time":"1409562655000"
                     }
                 ]
-                
-            } 
             
 + Response 400 (application/json)
 
@@ -2131,78 +2255,55 @@ Show detail of group
 
             {
                  "messages": [
-                    {"i18nKey":"i18nKeyErrorMessageGroupDetail","type":"error"}
+                    {"i18nKey":"i18nKeyErrorMessageGroupDetailPersons","type":"error"}
                  ]
             } 
 
 
-## HR3 Group records [/account/hr3/group/{group_Id}/records]
+### Operation [POST]
 
-### Operation [GET]
+Add new persons to group
 
-Get the list of group's records for hr3.
-
-#### Records of a group
+#### Add new persons to group
 
 + Request (application/json)
 
     + Headers
-
+    
             Access-Control-Allow-Origin: *
-
-+ Response 200 (application/json)
-
-    + Headers
-
-            Access-Control-Allow-Origin: *
-            X-License-Hr3: true
-            Access-Control-Expose-Headers: X-License-Hr3
 
     + Body
+ 
+                [
+                    {
+                    "id": 34,
+                    "name": "Sergei",
+                    "surname": "Dimitrienko",
+                    "position": "IT Expert" 
+                    },{
+                    "id": 32,
+                    "name": "Karl",
+                    "surname": "Schwarz",
+                    "position": "IT Expert" 
+                    }
+                ]
+             
 
-            
-            [{
-            "record_id": 1,
-            "record_date": "1406884255000",
-            "team_members": [
-             {
-                    "id": 1,
-                    "name": "František",
-                    "surname": "Vomáčka"
-                    },{
-                    "id": 2,
-                    "name": "Elizabeth II.",
-                    "surname": "Windsor"
-                    },{
-                    "id": 3,
-                    "name": "Silvestr",
-                    "surname": "Alone"
-                    }
-            ],
-            "team_diagnostic_status": "DIAGNOSTIC_COMPLETED"
-            },{
-            "record_id": 2,
-            "record_date": "1406884255000",
-            "team_members": [
++ Response 200  (application/json)
+
+    + Headers
+    
+            Access-Control-Allow-Origin: *
+    
+    + Body
+    
             {
-                    "id": 1,
-                    "name": "František",
-                    "surname": "Vomáčka"
-                    
-                    },{
-                    "id": 4,
-                    "name": "Arnold",
-                    "surname": "Schwarz"
-                    },{
-                    "id": 5,
-                    "name": "Elton",
-                    "surname": "John"
-                    }
-            ],
-            "team_diagnostic_status": "WAITING_FOR_DIAGNOSTIC"
-            } ]
-            
-+ Response 400 (application/json)
+                 "messages": [
+                    {"i18nKey":"i18nKeySuccessMessageGroupsPersons","type":"success"}
+                 ]
+            }
+    
++  Response 400 (application/json)
 
     + Headers
 
@@ -2215,18 +2316,17 @@ Get the list of group's records for hr3.
 
             {
                  "messages": [
-                    {"i18nKey":"i18nKeyErrorMessageGroupDetailRecords","type":"error"}
+                    {"i18nKey":"i18nKeyErrorMessageGroupsPersons","type":"error"}
                  ]
             } 
 
-
-## HR3 Group records delete record [/account/hr3/group/{group_Id}/delete/{id_record}]
+ 
+## HR3 Group persons delete person [/hr3/groups/{group_id}/persons/{id}]
              
 ### Operation [DELETE]
+Delete person from group's persons
 
-Delete result of group
-
-#### Delete result of group
+#### Delete person from group's persons
 
 + Request (application/json)
 
@@ -2248,7 +2348,7 @@ Delete result of group
 
             {
                 "messages":[  
-                {"i18nKey":"i18nKeySuccessMessageGroupDetailDeleteRecord","type":"success"}
+                {"i18nKey":"i18nKeySuccessMessageGroupsPersonsDeletePerson","type":"success"}
                  ]
             }    
             
@@ -2265,17 +2365,181 @@ Delete result of group
 
             {
                  "messages":[  
-                    {"i18nKey":"i18nKeyErrorMessageGroupDetailDeleteRecord","type":"error"}
+                    {"i18nKey":"i18nKeyErrorMessageGroupsPersonsDeletePerson","type":"error"}
                   ]
             }           
 
-## HR3 Group records Share group's record [/account/hr3/group/{group_Id}/share/{id_record}]
 
+
+
+## HR3 Group persons send invitation [/hr3/groups/{group_id}/persons/{id}/invitation]
+            
+### Operation [POST]
+Send email invitation for diagnostic whith scaner url
+
+#### Send invitation
+
++ Request (application/json)
+
+    + Headers
+
+            Access-Control-Allow-Origin: *
+            
+    + Body
+
+            {
+                "person_email": "person@seznam.cz"
+                 
+            }
+
++ Response 200 (application/json)
+
+    + Headers
+
+            Access-Control-Allow-Origin: *
+            X-License-Hr3: true
+            Access-Control-Expose-Headers: X-License-Hr3
+
+    + Body
+
+            {
+                "messages": [
+                {"i18nKey":"i18nKeySuccessMessageGroupsPersonsDiagnosticEmail","type":"success"}
+                 ] 
+            }    
+            
++ Response 400 (application/json)
+
+    + Headers
+
+            Accept: application/json
+            Access-Control-Allow-Origin: *
+            X-License-Hr3: true
+            Access-Control-Expose-Headers: X-License-Hr3
+
+    + Body
+
+            {
+                 "messages": [
+                    {"i18nKey":"i18nKeyErrorMessageGroupsPersonsDiagnosticEmail","type":"error"}
+                  ] 
+            }           
+
+
+
+
+# Group  HR3 groups teams
+
+## HR3 Create new team [/hr3/groups/{group_id}/teams]
+
+ 
 ### Operation [POST]
 
-Share group's result
+Create new team
 
-#### Share group's result
+#### Create new team
+
++ Request (application/json)
+
+    + Headers
+    
+            Access-Control-Allow-Origin: *
+
+    + Body
+ 
+              {
+              "person_ids":[34,32,12,3]
+             }
+
++ Response 200  (application/json)
+
+    + Headers
+    
+            Access-Control-Allow-Origin: *
+    
+    + Body
+    
+            {
+                 "messages": [
+                    {"i18nKey":"i18nKeySuccessMessageGroupsTeamCreated","type":"success"}
+                 ]
+            }
+    
++  Response 400 (application/json)
+
+    + Headers
+
+            Accept: application/json
+            Access-Control-Allow-Origin: *
+            X-License-Hr3: true
+            Access-Control-Expose-Headers: X-License-Hr3
+
+    + Body
+
+            {
+                 "messages": [
+                    {"i18nKey":"i18nKeyErrorMessageGroupsTeamCreated","type":"error"}
+                 ]
+            } 
+
+ 
+## HR3 Group teams delete team [/hr3/groups/{group_id}/teams/{team_id}]
+             
+### Operation [DELETE]
+Delete team from group's teams
+
+#### Delete team from group's teams
+
++ Request (application/json)
+
+    + Headers
+
+            Access-Control-Allow-Origin: *
+            
+    
+
++ Response 200 (application/json)
+
+    + Headers
+
+            Access-Control-Allow-Origin: *
+            X-License-Hr3: true
+            Access-Control-Expose-Headers: X-License-Hr3
+
+    + Body
+
+            {
+                "messages":[  
+                {"i18nKey":"i18nKeySuccessMessageGroupsTeamsDeleteTeam","type":"success"}
+                 ]
+            }    
+            
++ Response 400 (application/json)
+
+    + Headers
+
+            Accept: application/json
+            Access-Control-Allow-Origin: *
+            X-License-Hr3: true
+            Access-Control-Expose-Headers: X-License-Hr3
+
+    + Body
+
+            {
+                 "messages":[  
+                    {"i18nKey":"i18nKeyErrorMessageGroupsTeamsDeleteTeam","type":"error"}
+                  ]
+            }           
+
+ 
+ 
+
+## HR3 Group records Share team's result [/hr3/groups/{group_id}/teams/{team_id}/sharing/{id}]
+
+### Operation [POST]
+Share team's result
+
+#### Share team's result
 
 + Request (application/json)
 
@@ -2286,7 +2550,7 @@ Share group's result
     + Body
 
              {
-                "EmailsToShare": "person@seznam.cz,person@seznam.cz,person@seznam.cz"
+                "emails_to_share": "person@seznam.cz,person@seznam.cz,person@seznam.cz"
                  
             }
 
@@ -2322,6 +2586,4 @@ Share group's result
                     {"i18nKey":"i18nKeyErrorMessageGroupDetailShare","type":"error"}
                  ]
             } 
-
-
 
