@@ -2040,42 +2040,33 @@ Get the list of all user training.
  
 ## HR3 Group detail [/hr3/groups/{group_id}]
 
-### Operation [GET]
-Show detail of group
+### Show detail of group [GET]
 
-#### Detail of group
-
-+ Request (application/json)
++ Request
 
     + Headers
 
-            Access-Control-Allow-Origin: *
+            X-Auth-token: your_token
+            Accept: application/json
 
 + Response 200 (application/json)
 
     + Headers
-
-            Access-Control-Allow-Origin: *
+    
             X-License-Hr3: true
             Access-Control-Expose-Headers: X-License-Hr3
 
     + Body
 
-            
             {
                 "id": "14",
                 "name": "Company Name 3",
-                "created_date": "1412154655000" 
+                "created_date": "1412154655000"
+                "diagnostics_completed": "2",
+                "members_count": "12"
             } 
             
 + Response 400 (application/json)
-
-    + Headers
-
-            Accept: application/json
-            Access-Control-Allow-Origin: *
-            X-License-Hr3: true
-            Access-Control-Expose-Headers: X-License-Hr3
 
     + Body
 
@@ -2088,12 +2079,14 @@ Show detail of group
 
 ### Create new group of persons [POST]
 
+> TODO: we need words and language for new persons
+
 + Request (application/json)
 
     + Headers
-
-            Access-Control-Allow-Origin: *
-
+    
+            X-Auth-token: your_token
+            Accept: application/json
 
     + Body
 
@@ -2101,27 +2094,22 @@ Show detail of group
                 "name": "New group name",
                 "persons":[
                     {
-                    "id": 11,
                     "name": "František",
                     "surname": "Vomáčka",
                     "position": "Kuchař",
                     },{
-                    "id": 12,
                     "name": "Elizabeth II.",
                     "surname": "Windsor",
                     "position": "Queen of the Empire",
                     },{
-                    "id": 13,
                     "name": "Silvestr",
                     "surname": "Alone",
                     "position": "Boxer",
                     },{
-                    "id": 14,
                     "name": "Arnold",
                     "surname": "Schwarz",
                     "position": "Krotitel predátorů",
                     },{
-                    "id": 15,
                     "name": "Elton",
                     "surname": "John",
                     "position": "Profesionální účastník karaoke",
@@ -2130,15 +2118,8 @@ Show detail of group
                 
             } 
 
-+ Response 200  (application/json)
++ Response 200 (application/json)
 
-    + Headers
-    
-            Accept: application/json
-            Access-Control-Allow-Origin: *
-            X-License-Hr3: true
-            Access-Control-Expose-Headers: X-License-Hr3
-    
     + Body
     
             {
@@ -2148,13 +2129,6 @@ Show detail of group
             }
     
 +  Response 400 (application/json)
-
-    + Headers
-
-            Accept: application/json
-            Access-Control-Allow-Origin: *
-            X-License-Hr3: true
-            Access-Control-Expose-Headers: X-License-Hr3
 
     + Body
 
@@ -2169,67 +2143,59 @@ Show detail of group
 
 ### List group persons [GET]
 
-+ Request (application/json)
++ Request
 
     + Headers
 
-            Access-Control-Allow-Origin: *
+            X-Auth-token: your_token
+            Accept: application/json
 
 + Response 200 (application/json)
 
-    + Headers
-
-            Access-Control-Allow-Origin: *
-            X-License-Hr3: true
-            Access-Control-Expose-Headers: X-License-Hr3
-
     + Body
  
-            [
-                    {
-                    "id": 1,
-                    "name": "František",
-                    "surname": "Vomáčka",
-                    "position": "Kuchař",
-                    "diagnostic_time":"1412154655000",
-                    "affected": false
-                    },{
-                    "id": 2,
-                    "name": "Elizabeth II.",
-                    "surname": "Windsor",
-                    "position": "Queen of the Empire",
-                    "diagnostic_time":null
-                    },{
-                    "id": 3,
-                    "name": "Silvestr",
-                    "surname": "Alone",
-                    "position": "Boxer",
-                    "diagnostic_time":"1406884255000",
-                    "affected": true
-                    },{
-                    "id": 4,
-                    "name": "Arnold",
-                    "surname": "Schwarz",
-                    "position": "Krotitel predátorů",
-                    "diagnostic_time":null
-                    },{
-                    "id": 5,
-                    "name": "Elton",
-                    "surname": "John",
-                    "position": "Profesionální účastník karaoke",
-                    "diagnostic_time":"1409562655000",
-                    "affected": false
-                    }
-                ]
+             [
+              {
+                "id": 1,
+                "name": "František",
+                "surname": "Vomáčka",
+                "position": "Kuchař",
+                "diagnostic_time": "1412154655000",
+                "affected": false
+              },
+              {
+                "id": 2,
+                "name": "Elizabeth II.",
+                "surname": "Windsor",
+                "position": "Queen of the Empire",
+                "diagnostic_time": null
+              },
+              {
+                "id": 3,
+                "name": "Silvestr",
+                "surname": "Alone",
+                "position": "Boxer",
+                "diagnostic_time": "1406884255000",
+                "affected": true
+              },
+              {
+                "id": 4,
+                "name": "Arnold",
+                "surname": "Schwarz",
+                "position": "Krotitel predátorů",
+                "diagnostic_time": null
+              },
+              {
+                "id": 5,
+                "name": "Elton",
+                "surname": "John",
+                "position": "Profesionální účastník karaoke",
+                "diagnostic_time": "1409562655000",
+                "affected": false
+              }
+            ]
             
 + Response 400 (application/json)
-
-    + Headers
-
-            Accept: application/json
-            Access-Control-Allow-Origin: *
-            X-License-Hr3: true
-            Access-Control-Expose-Headers: X-License-Hr3
 
     + Body
 
@@ -2240,40 +2206,33 @@ Show detail of group
             } 
 
 
-### Operation [POST]
-
-Add new persons to group
-
-#### Add new persons to group
+### Add new persons to group [POST]
 
 + Request (application/json)
 
     + Headers
     
-            Access-Control-Allow-Origin: *
+            X-Auth-token: your_token
+            Accept: application/json
 
     + Body
  
-                [
-                    {
-                    "id": 34,
-                    "name": "Sergei",
-                    "surname": "Dimitrienko",
-                    "position": "IT Expert" 
-                    },{
-                    "id": 32,
-                    "name": "Karl",
-                    "surname": "Schwarz",
-                    "position": "IT Expert" 
-                    }
-                ]
-             
+            [
+              {
+                "id": 34,
+                "name": "Sergei",
+                "surname": "Dimitrienko",
+                "position": "IT Expert"
+              },
+              {
+                "id": 32,
+                "name": "Karl",
+                "surname": "Schwarz",
+                "position": "IT Expert"
+              }
+            ]
 
-+ Response 200  (application/json)
-
-    + Headers
-    
-            Access-Control-Allow-Origin: *
++ Response 200 (application/json)
     
     + Body
     
@@ -2284,13 +2243,6 @@ Add new persons to group
             }
     
 +  Response 400 (application/json)
-
-    + Headers
-
-            Accept: application/json
-            Access-Control-Allow-Origin: *
-            X-License-Hr3: true
-            Access-Control-Expose-Headers: X-License-Hr3
 
     + Body
 
@@ -2303,26 +2255,16 @@ Add new persons to group
  
 ## HR3 Group persons delete person [/hr3/groups/{group_id}/persons/{id}]
              
-### Operation [DELETE]
-Delete person from group's persons
-
-#### Delete person from group's persons
+### Delete person from group's persons [DELETE]
 
 + Request (application/json)
 
     + Headers
 
-            Access-Control-Allow-Origin: *
+            X-Auth-token: your_token
+            Accept: application/json
             
-    
-
 + Response 200 (application/json)
-
-    + Headers
-
-            Access-Control-Allow-Origin: *
-            X-License-Hr3: true
-            Access-Control-Expose-Headers: X-License-Hr3
 
     + Body
 
@@ -2334,45 +2276,26 @@ Delete person from group's persons
             
 + Response 400 (application/json)
 
-    + Headers
-
-            Accept: application/json
-            Access-Control-Allow-Origin: *
-            X-License-Hr3: true
-            Access-Control-Expose-Headers: X-License-Hr3
-
     + Body
 
             {
                  "messages":[  
                     {"i18nKey":"i18nKeyErrorMessageGroupsPersonsDeletePerson","type":"error"}
                   ]
-            }           
-
-
-
+            }
 
 ## HR3 Group persons send invitation [/hr3/groups/{group_id}/persons/{id}/invitation]
             
-### Operation [POST]
-Send email invitation for diagnostic whith scaner url
-
-#### Send invitation
+### Send email invitation for diagnostic whith scaner url [POST]
 
 + Request (application/json)
 
     + Headers
 
-            Access-Control-Allow-Origin: *
+            X-Auth-token: your_token
+            Accept: application/json
             
-
 + Response 200 (application/json)
-
-    + Headers
-
-            Access-Control-Allow-Origin: *
-            X-License-Hr3: true
-            Access-Control-Expose-Headers: X-License-Hr3
 
     + Body
 
@@ -2384,13 +2307,6 @@ Send email invitation for diagnostic whith scaner url
             
 + Response 400 (application/json)
 
-    + Headers
-
-            Accept: application/json
-            Access-Control-Allow-Origin: *
-            X-License-Hr3: true
-            Access-Control-Expose-Headers: X-License-Hr3
-
     + Body
 
             {
@@ -2399,65 +2315,47 @@ Send email invitation for diagnostic whith scaner url
                   ] 
             }           
 
- 
 
 ## HR3 Groups teams [/hr3/groups/{group_id}/teams]
 
-
-### Operation [GET]
-Get the list of saved teams.
-
-#### List of saved teams
+### Get the list of saved teams. [GET]
 
 + Request (application/json)
 
     + Headers
 
-            Access-Control-Allow-Origin: *
+            X-Auth-token: your_token
+            Accept: application/json
 
 + Response 200 (application/json)
-
-    + Headers
-
-            Access-Control-Allow-Origin: *
-            X-License-Hr3: true
-            Access-Control-Expose-Headers: X-License-Hr3
 
     + Body
  
             [
-                    {
-                    "id":43,
-                    "name": "Tým IT",
-                    "created_date":"1412154655000",
-                    "persons": [
-                    "František Vomáčka",
-                    "Silvestr Alone",
-                    "Arnold Schwarz",
-                    "Elton John"
-                     ] 
-                    
-                    },{
-                    "id": 22,
-                    "name": "Administrace",
-                    "created_date":"1409562655000",
-                    "persons": [
-                    "Elizabeth Windsor",
-                    "Arnold Schwarz",
-                    "Elton John"
-                    ] 
-                    } 
-                    
+              {
+                "id": 43,
+                "name": "Tým IT",
+                "created_date": "1412154655000",
+                "persons": [
+                  "František Vomáčka",
+                  "Silvestr Alone",
+                  "Arnold Schwarz",
+                  "Elton John"
+                ]
+              },
+              {
+                "id": 22,
+                "name": "Administrace",
+                "created_date": "1409562655000",
+                "persons": [
+                  "Elizabeth Windsor",
+                  "Arnold Schwarz",
+                  "Elton John"
+                ]
+              }
             ]
             
 + Response 400 (application/json)
-
-    + Headers
-
-            Accept: application/json
-            Access-Control-Allow-Origin: *
-            X-License-Hr3: true
-            Access-Control-Expose-Headers: X-License-Hr3
 
     + Body
 
@@ -2468,29 +2366,34 @@ Get the list of saved teams.
             } 
 
  
-### Operation [POST]
+### Create new team [POST]
 
-Create new team
-
-#### Create new team
+For this request we apply hr3 licence.
 
 + Request (application/json)
 
     + Headers
     
-            Access-Control-Allow-Origin: *
+            X-Auth-token: your_token
+            Accept: application/json
 
     + Body
  
-              {
-              "person_ids":[34,32,12,3]
-             }
+            {
+              "person_ids": [
+                34,
+                32,
+                12,
+                3
+              ]
+            }
 
 + Response 200  (application/json)
 
     + Headers
     
-            Access-Control-Allow-Origin: *
+            X-License-Hr3: true
+            Access-Control-Expose-Headers: X-License-Hr3
     
     + Body
     
@@ -2501,13 +2404,6 @@ Create new team
             }
     
 +  Response 400 (application/json)
-
-    + Headers
-
-            Accept: application/json
-            Access-Control-Allow-Origin: *
-            X-License-Hr3: true
-            Access-Control-Expose-Headers: X-License-Hr3
 
     + Body
 
@@ -2520,26 +2416,16 @@ Create new team
  
 ## HR3 Groups teams delete team [/hr3/groups/{group_id}/teams/{team_id}]
              
-### Operation [DELETE]
-Delete team from group's teams
-
-#### Delete team from group's teams
+### Delete team from group's teams [DELETE]
 
 + Request (application/json)
 
     + Headers
 
-            Access-Control-Allow-Origin: *
-            
-    
+            X-Auth-token: your_token
+            Accept: application/json
 
 + Response 200 (application/json)
-
-    + Headers
-
-            Access-Control-Allow-Origin: *
-            X-License-Hr3: true
-            Access-Control-Expose-Headers: X-License-Hr3
 
     + Body
 
@@ -2550,13 +2436,6 @@ Delete team from group's teams
             }    
             
 + Response 400 (application/json)
-
-    + Headers
-
-            Accept: application/json
-            Access-Control-Allow-Origin: *
-            X-License-Hr3: true
-            Access-Control-Expose-Headers: X-License-Hr3
 
     + Body
 
@@ -2571,16 +2450,14 @@ Delete team from group's teams
 
 ## HR3 Groups teams share team's result [/hr3/groups/{group_id}/teams/{team_id}/sharing]
 
-### Operation [POST]
-Share team's result
-
-#### Share team's result
+### Share team's result [POST]
 
 + Request (application/json)
 
     + Headers
 
-            Access-Control-Allow-Origin: *
+            X-Auth-token: your_token
+            Accept: application/json
             
     + Body
 
@@ -2591,12 +2468,6 @@ Share team's result
 
 + Response 200 (application/json)
 
-    + Headers
-
-            Access-Control-Allow-Origin: *
-            X-License-Hr3: true
-            Access-Control-Expose-Headers: X-License-Hr3
-
     + Body
 
             {
@@ -2606,13 +2477,6 @@ Share team's result
             }    
             
 + Response 400 (application/json)
-
-    + Headers
-
-            Accept: application/json
-            Access-Control-Allow-Origin: *
-            X-License-Hr3: true
-            Access-Control-Expose-Headers: X-License-Hr3
 
     + Body
 
