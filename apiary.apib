@@ -2492,6 +2492,87 @@ For this request we apply hr3 licence.
                   ]
             }           
 
+### Get team detail [GET]
+
+LIst of words for diagnostic
+
++ Request (application/json)
+
+    + Headers
+ 
+            X-Auth-token: your_token
+            Accept: application/json
+ 
+  
+
++ Response 200  (application/json)
+
+    + Headers
+ 
+            X-License-Hr3: true
+            Access-Control-Expose-Headers: X-License-Hr3
+    
+    + Body
+    
+             {
+            "words": 
+            [
+              [
+                {
+                  "lang_code": "cs",
+                  "object_type": "WORD",
+                  "label": "Já"
+                },
+                {
+                  "lang_code": "en",
+                  "object_type": "WORD",
+                  "label": "Me"
+                }
+              ],
+              [
+                {
+                  "lang_code": "cs",
+                  "object_type": "WORD",
+                  "label": "Peníze"
+                },
+                {
+                  "lang_code": "en",
+                  "object_type": "WORD",
+                  "label": "Money"
+                }
+              ]
+            ],
+            "persons": [
+                {
+                    "sendMail": true,
+                    "firstName": "Karl",
+                    "lastName": "Schlanshamer",
+                    "email": "karlAusDeutchland@germany.de",
+                    "position": "Boss",
+                    "diagnostisLanguage": "en"
+                },{
+                    "sendMail": false,
+                    "firstName": "Sergei",
+                    "lastName": "Dimitrienko",
+                    "email": "dinitriSergei@motherrussia.ru",
+                    "position": "IT Expert",
+                    "diagnostisLanguage": "cs"
+                }
+            ] 
+              
+              
+              
+            }
+    
++  Response 400 (application/json)
+
+    + Body
+
+            {
+                 "messages": [
+                    {"i18nKey":"i18nKeyErrorMessageGroupsTeamdetail","type":"error"}
+                 ]
+            } 
  
  
 
