@@ -2042,46 +2042,6 @@ Get the list of all user training.
                  ]
             } 
 
- 
-## HR3 Group detail [/hr3/groups/{group_id}]
-
-### Show detail of group [GET]
-
-+ Request
-
-    + Headers
-
-            X-Auth-token: your_token
-            Accept: application/json
-
-+ Response 200 (application/json)
-
-    + Headers
-    
-            X-License-Hr3: true
-            Access-Control-Expose-Headers: X-License-Hr3
-
-    + Body
-
-            {
-                "id": "14",
-                "name": "Company Name 3",
-                "created_date": "1412154655000",
-                "diagnostics_completed": "4",
-                "members_count": "12"
-            } 
-            
-+ Response 400 (application/json)
-
-    + Body
-
-            {
-                 "messages": [
-                    {"i18nKey":"i18nKeyErrorMessageGroupDetail","type":"error"}
-                 ]
-            } 
- 
-
 ### Create new group of persons [POST]
 
 > TODO: we need words and language for new persons
@@ -2164,6 +2124,46 @@ Get the list of all user training.
                     {"i18nKey":"i18nKeyErrorMessageNewGroup","type":"error"}
                  ]
             } 
+ 
+ 
+## HR3 Group detail [/hr3/groups/{group_id}]
+
+### Show detail of group [GET]
+
++ Request
+
+    + Headers
+
+            X-Auth-token: your_token
+            Accept: application/json
+
++ Response 200 (application/json)
+
+    + Headers
+    
+            X-License-Hr3: true
+            Access-Control-Expose-Headers: X-License-Hr3
+
+    + Body
+
+            {
+                "id": "14",
+                "name": "Company Name 3",
+                "created_date": "1412154655000",
+                "diagnostics_completed": "4",
+                "members_count": "12"
+            } 
+            
++ Response 400 (application/json)
+
+    + Body
+
+            {
+                 "messages": [
+                    {"i18nKey":"i18nKeyErrorMessageGroupDetail","type":"error"}
+                 ]
+            } 
+ 
  
 
 ## HR3 Groups persons [/hr3/groups/{group_id}/persons]
