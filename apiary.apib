@@ -2097,28 +2097,50 @@ Get the list of all user training.
 
             {
                 "name": "New group name",
-                "persons":[
+                
+            "persons": [
+                {
+                    "sendMail": true,
+                    "name": "Karl",
+                    "surname": "Schlanshamer",
+                    "email": "karlAusDeutchland@germany.de",
+                    "position": "Boss",
+                    "diagnostisLanguage": "en"
+                },{
+                    "sendMail": false,
+                    "name": "Sergei",
+                    "surname": "Dimitrienko",
+                    "email": "dinitriSergei@motherrussia.ru",
+                    "position": "IT Expert",
+                    "diagnostisLanguage": "cs"
+                }
+                ],
+                "words": 
+                [
+                  [
                     {
-                    "name": "František",
-                    "surname": "Vomáčka",
-                    "position": "Kuchař",
-                    },{
-                    "name": "Elizabeth II.",
-                    "surname": "Windsor",
-                    "position": "Queen of the Empire",
-                    },{
-                    "name": "Silvestr",
-                    "surname": "Alone",
-                    "position": "Boxer",
-                    },{
-                    "name": "Arnold",
-                    "surname": "Schwarz",
-                    "position": "Krotitel predátorů",
-                    },{
-                    "name": "Elton",
-                    "surname": "John",
-                    "position": "Profesionální účastník karaoke",
+                      "lang_code": "cs",
+                      "object_type": "WORD",
+                      "label": "Já"
+                    },
+                    {
+                      "lang_code": "en",
+                      "object_type": "WORD",
+                      "label": "Me"
                     }
+                  ],
+                  [
+                    {
+                      "lang_code": "cs",
+                      "object_type": "WORD",
+                      "label": "Peníze"
+                    },
+                    {
+                      "lang_code": "en",
+                      "object_type": "WORD",
+                      "label": "Money"
+                    }
+                  ]
                 ]
                 
             } 
