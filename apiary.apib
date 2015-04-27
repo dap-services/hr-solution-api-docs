@@ -2044,8 +2044,6 @@ Get the list of all user training.
 
 ### Create new group of persons [POST]
 
-> TODO: we need words and language for new persons
-
 + Request (application/json)
 
     + Headers
@@ -2056,54 +2054,46 @@ Get the list of all user training.
     + Body
 
             {
-                "name": "New group name",
-                
-            "persons": [
+              "name": "New group name",
+              "persons": [
                 {
-                    "sendMail": true,
-                    "name": "Karl",
-                    "surname": "Schlanshamer",
-                    "email": "karlAusDeutchland@germany.de",
-                    "position": "Boss",
-                    "diagnostisLanguage": "en"
-                },{
-                    "sendMail": false,
-                    "name": "Sergei",
-                    "surname": "Dimitrienko",
-                    "email": "dinitriSergei@motherrussia.ru",
-                    "position": "IT Expert",
-                    "diagnostisLanguage": "cs"
+                  "name": "František",
+                  "surname": "Vomáčka",
+                  "position": "Kuchař",
+                  "lang_code": "cs",
+                  "email": "email1@dap-services.cz",
+                  "send_mail": true
+                },
+                {
+                  "name": "Elizabeth II.",
+                  "surname": "Windsor",
+                  "position": "Queen of the Empire",
+                  "lang_code": "en",
+                  "email": "email2@dap-services.cz",
+                  "send_mail": false
+                },
+                {
+                  "name": "Silvestr",
+                  "surname": "Alone",
+                  "position": "Boxer",
+                  "lang_code": "en",
+                  "email": "email3@dap-services.cz",
+                  "send_mail": true
                 }
-                ],
-                "words": 
-                [
-                  [
-                    {
-                      "lang_code": "cs",
-                      "object_type": "WORD",
-                      "label": "Já"
-                    },
-                    {
-                      "lang_code": "en",
-                      "object_type": "WORD",
-                      "label": "Me"
-                    }
-                  ],
-                  [
-                    {
-                      "lang_code": "cs",
-                      "object_type": "WORD",
-                      "label": "Peníze"
-                    },
-                    {
-                      "lang_code": "en",
-                      "object_type": "WORD",
-                      "label": "Money"
-                    }
-                  ]
-                ]
-                
-            } 
+              ],
+              "scan_objects": [
+                {
+                  "cs": "Stravenky",
+                  "en": "Meal tickets",
+                  "object_type": "WORD"
+                },
+                {
+                  "cs": "Peníze",
+                  "en": "Money",
+                  "object_type": "WORD"
+                }
+              ]
+            }
 
 + Response 200 (application/json)
 
