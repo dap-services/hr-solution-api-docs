@@ -2159,6 +2159,100 @@ Get the list of all user training.
             } 
  
  
+## HR3 Group diagnostic words [/hr3/groups/{group_id}/words]
+### Get group words for adding new persons to the group [GET]
+
+List of words for diagnostic
+
++ Request (application/json)
+
+    + Headers
+ 
+            X-Auth-token: your_token
+            Accept: application/json
+ 
+  
+
++ Response 200  (application/json)
+
+    + Headers
+ 
+            X-License-Hr3: true
+            Access-Control-Expose-Headers: X-License-Hr3
+    
+    + Body
+    
+            {
+              "persons": [
+                {
+                  "name": "František",
+                  "surname": "Vomáčka",
+                  "position": "Kuchař",
+                  "lang_code": "cs",
+                  "email": "email1@dap-services.cz",
+                  "send_mail": true
+                },
+                {
+                  "name": "Elizabeth II.",
+                  "surname": "Windsor",
+                  "position": "Queen of the Empire",
+                  "lang_code": "en",
+                  "email": "email2@dap-services.cz",
+                  "send_mail": false
+                },
+                {
+                  "name": "Silvestr",
+                  "surname": "Alone",
+                  "position": "Boxer",
+                  "lang_code": "pl",
+                  "email": "email3@dap-services.cz",
+                  "send_mail": true
+                }
+              ],
+              "scan_objects": [
+                {
+                  "language_equivalents": {
+                    "cs": "Stravenky",
+                    "en": "Meal tickets"
+                  },
+                  "object_type": "WORD"
+                },
+                {
+                  "language_equivalents": {
+                    "cs": "Peníze",
+                    "en": "Money" 
+                  },
+                  "object_type": "WORD"
+                },
+                {
+                  "language_equivalents": {
+                    "cs": "Moje práce",
+                    "en": "My job" 
+                  },
+                  "object_type": "WORD"
+                },
+                {
+                  "language_equivalents": {
+                    "cs": "Peníze",
+                    "en": "Money" 
+                  },
+                  "object_type": "WORD"
+                }
+              ]
+            }
+  
+    
++  Response 400 (application/json)
+
+    + Body
+
+            {
+                 "messages": [
+                    {"i18nKey":"i18nKeyErrorMessageGroupsTeamdetail","type":"error"}
+                 ]
+            } 
+ 
+  
 
 ## HR3 Groups persons [/hr3/groups/{group_id}/persons]
 
@@ -2274,7 +2368,6 @@ Get the list of all user training.
                     {"i18nKey":"i18nKeyErrorMessageGroupDetailPersons","type":"error"}
                  ]
             } 
-
 
 ### Add new persons to group [POST]
 
@@ -2467,7 +2560,6 @@ Get the list of all user training.
                  ]
             } 
 
- 
 ### Create new team [POST]
 
 For this request we apply hr3 licence.
@@ -2542,99 +2634,6 @@ For this request we apply hr3 licence.
                     {"i18nKey":"i18nKeyErrorMessageGroupsTeamsDeleteTeam","type":"error"}
                   ]
             }           
-
-### Get group detail for new person [GET]
-
-List of words for diagnostic
-
-+ Request (application/json)
-
-    + Headers
- 
-            X-Auth-token: your_token
-            Accept: application/json
- 
-  
-
-+ Response 200  (application/json)
-
-    + Headers
- 
-            X-License-Hr3: true
-            Access-Control-Expose-Headers: X-License-Hr3
-    
-    + Body
-    
-            {
-              "persons": [
-                {
-                  "name": "František",
-                  "surname": "Vomáčka",
-                  "position": "Kuchař",
-                  "lang_code": "cs",
-                  "email": "email1@dap-services.cz",
-                  "send_mail": true
-                },
-                {
-                  "name": "Elizabeth II.",
-                  "surname": "Windsor",
-                  "position": "Queen of the Empire",
-                  "lang_code": "en",
-                  "email": "email2@dap-services.cz",
-                  "send_mail": false
-                },
-                {
-                  "name": "Silvestr",
-                  "surname": "Alone",
-                  "position": "Boxer",
-                  "lang_code": "pl",
-                  "email": "email3@dap-services.cz",
-                  "send_mail": true
-                }
-              ],
-              "scan_objects": [
-                {
-                  "language_equivalents": {
-                    "cs": "Stravenky",
-                    "en": "Meal tickets"
-                  },
-                  "object_type": "WORD"
-                },
-                {
-                  "language_equivalents": {
-                    "cs": "Peníze",
-                    "en": "Money" 
-                  },
-                  "object_type": "WORD"
-                },
-                {
-                  "language_equivalents": {
-                    "cs": "Moje práce",
-                    "en": "My job" 
-                  },
-                  "object_type": "WORD"
-                },
-                {
-                  "language_equivalents": {
-                    "cs": "Peníze",
-                    "en": "Money" 
-                  },
-                  "object_type": "WORD"
-                }
-              ]
-            }
-  
-    
-+  Response 400 (application/json)
-
-    + Body
-
-            {
-                 "messages": [
-                    {"i18nKey":"i18nKeyErrorMessageGroupsTeamdetail","type":"error"}
-                 ]
-            } 
- 
  
 
 ## HR3 Groups teams share team's result [/hr3/groups/{group_id}/teams/{team_id}/sharing]
