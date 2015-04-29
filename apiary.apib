@@ -2483,53 +2483,7 @@ For this request we apply hr3 licence.
     + Body
  
             {
-            "words": 
-            [
-              [
-                {
-                  "lang_code": "cs",
-                  "object_type": "WORD",
-                  "label": "Já"
-                },
-                {
-                  "lang_code": "en",
-                  "object_type": "WORD",
-                  "label": "Me"
-                }
-              ],
-              [
-                {
-                  "lang_code": "cs",
-                  "object_type": "WORD",
-                  "label": "Peníze"
-                },
-                {
-                  "lang_code": "en",
-                  "object_type": "WORD",
-                  "label": "Money"
-                }
-              ]
-            ],
-            "persons": [
-                {
-                    "sendMail": true,
-                    "firstName": "Karl",
-                    "lastName": "Schlanshamer",
-                    "email": "karlAusDeutchland@germany.de",
-                    "position": "Boss",
-                    "diagnostisLanguage": "en"
-                },{
-                    "sendMail": false,
-                    "firstName": "Sergei",
-                    "lastName": "Dimitrienko",
-                    "email": "dinitriSergei@motherrussia.ru",
-                    "position": "IT Expert",
-                    "diagnostisLanguage": "cs"
-                }
-            ] 
-              
-              
-              
+            "persons_ids": [2,4,6,7] 
             }
 
 + Response 200  (application/json)
@@ -2589,7 +2543,7 @@ For this request we apply hr3 licence.
                   ]
             }           
 
-### Get team detail [GET]
+### Get group detail for new person [GET]
 
 List of words for diagnostic
 
@@ -2611,55 +2565,65 @@ List of words for diagnostic
     
     + Body
     
-             {
-            "words": 
-            [
-              [
+            {
+              "persons": [
                 {
+                  "name": "František",
+                  "surname": "Vomáčka",
+                  "position": "Kuchař",
                   "lang_code": "cs",
-                  "object_type": "WORD",
-                  "label": "Moje práce"
+                  "email": "email1@dap-services.cz",
+                  "send_mail": true
                 },
                 {
+                  "name": "Elizabeth II.",
+                  "surname": "Windsor",
+                  "position": "Queen of the Empire",
                   "lang_code": "en",
-                  "object_type": "WORD",
-                  "label": "My job"
+                  "email": "email2@dap-services.cz",
+                  "send_mail": false
+                },
+                {
+                  "name": "Silvestr",
+                  "surname": "Alone",
+                  "position": "Boxer",
+                  "lang_code": "pl",
+                  "email": "email3@dap-services.cz",
+                  "send_mail": true
                 }
               ],
-              [
+              "scan_objects": [
                 {
-                  "lang_code": "cs",
-                  "object_type": "WORD",
-                  "label": "Peníze"
+                  "language_equivalents": {
+                    "cs": "Stravenky",
+                    "en": "Meal tickets"
+                  },
+                  "object_type": "WORD"
                 },
                 {
-                  "lang_code": "en",
-                  "object_type": "WORD",
-                  "label": "Money"
+                  "language_equivalents": {
+                    "cs": "Peníze",
+                    "en": "Money" 
+                  },
+                  "object_type": "WORD"
+                },
+                {
+                  "language_equivalents": {
+                    "cs": "Moje práce",
+                    "en": "My job" 
+                  },
+                  "object_type": "WORD"
+                },
+                {
+                  "language_equivalents": {
+                    "cs": "Peníze",
+                    "en": "Money" 
+                  },
+                  "object_type": "WORD"
                 }
               ]
-            ],
-            "persons": [
-                {
-                    "sendMail": true,
-                    "firstName": "Karl",
-                    "lastName": "Schlanshamer",
-                    "email": "karlAusDeutchland@germany.de",
-                    "position": "Boss",
-                    "diagnostisLanguage": "en"
-                },{
-                    "sendMail": false,
-                    "firstName": "Sergei",
-                    "lastName": "Dimitrienko",
-                    "email": "dinitriSergei@motherrussia.ru",
-                    "position": "IT Expert",
-                    "diagnostisLanguage": "cs"
-                }
-            ] 
-              
-              
-              
             }
+  
     
 +  Response 400 (application/json)
 
