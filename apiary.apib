@@ -2287,20 +2287,52 @@ Get the list of all user training.
 
     + Body
  
-            [
-              {
-                "id": 34,
-                "name": "Sergei",
-                "surname": "Dimitrienko",
-                "position": "IT Expert"
-              },
-              {
-                "id": 32,
-                "name": "Karl",
-                "surname": "Schwarz",
-                "position": "IT Expert"
-              }
-            ]
+             {
+              "persons": [
+                {
+                  "name": "František",
+                  "surname": "Vomáčka",
+                  "position": "Kuchař",
+                  "lang_code": "cs",
+                  "email": "email1@dap-services.cz",
+                  "send_mail": true
+                },
+                {
+                  "name": "Elizabeth II.",
+                  "surname": "Windsor",
+                  "position": "Queen of the Empire",
+                  "lang_code": "en",
+                  "email": "email2@dap-services.cz",
+                  "send_mail": false
+                },
+                {
+                  "name": "Silvestr",
+                  "surname": "Alone",
+                  "position": "Boxer",
+                  "lang_code": "pl",
+                  "email": "email3@dap-services.cz",
+                  "send_mail": true
+                }
+              ],
+              "scan_objects": [
+                {
+                  "language_equivalents": {
+                    "cs": "Stravenky",
+                    "en": "Meal tickets",
+                    "pl": "bony żywnościowe"
+                  },
+                  "object_type": "WORD"
+                },
+                {
+                  "language_equivalents": {
+                    "cs": "Peníze",
+                    "en": "Money",
+                    "pl": "Pieniądze"
+                  },
+                  "object_type": "WORD"
+                }
+              ]
+            }
 
 + Response 200 (application/json)
     
