@@ -2636,6 +2636,46 @@ For this request we apply hr3 licence.
                   ]
             }           
  
+### Update team [PUT]
+    Generate new team result, from list of group persons ids.
+
++ Request (application/json)
+
+    + Headers
+    
+            X-Auth-token: your_token
+            Accept: application/json
+            Access-Control-Allow-Origin: *
+
+    + Body
+             
+            { 
+                "team_name":"new team name",
+                "persons_ids":[2,5,8,13,24] 
+            }
+             
++ Response 200 (application/json)
+        
+    + Body
+        
+            {
+                 "messages":[  
+                {"i18nKey":"i18nKeySuccessMessageGroupsTeamsUpdateTeam","type":"success"}
+                ]
+            }    
+                    
++ Response 400 (application/json)
+        
+    + Body
+        
+            {
+                "messages":[  
+                {"i18nKey":"i18nKeyErrorMessageGroupsTeamsUpdateTeam","type":"error"}
+                ]
+            }        
+         
+ 
+ 
 
 ## HR3 Groups teams share team's result [/hr3/groups/{group_id}/teams/{team_id}/sharing]
 
