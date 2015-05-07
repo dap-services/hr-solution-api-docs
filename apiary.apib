@@ -2157,8 +2157,86 @@ Get the list of all user training.
                     {"i18nKey":"i18nKeyErrorMessageGroupDetail","type":"error"}
                  ]
             } 
+
+### Add new persons to group [PUT]
+
++ Request (application/json)
+
+    + Headers
+
+            X-Auth-token: your_token
+            Accept: application/json
+
+    + Body
  
- 
+             {
+              "persons": [
+                {
+                  "first_name": "František",
+                  "last_name": "Vomáčka",
+                  "position": "Kuchař",
+                  "lang_code": "cs",
+                  "email": "email1@dap-services.cz",
+                  "send_mail": true
+                },
+                {
+                  "first_name": "Elizabeth II.",
+                  "last_name": "Windsor",
+                  "position": "Queen of the Empire",
+                  "lang_code": "en",
+                  "email": "email2@dap-services.cz",
+                  "send_mail": false
+                },
+                {
+                  "first_name": "Silvestr",
+                  "last_name": "Alone",
+                  "position": "Boxer",
+                  "lang_code": "pl",
+                  "email": "email3@dap-services.cz",
+                  "send_mail": true
+                }
+              ],
+              "scan_objects": [
+                {
+                  "language_equivalents": {
+                    "cs": "Stravenky",
+                    "en": "Meal tickets",
+                    "pl": "bony żywnościowe"
+                  },
+                  "object_type": "WORD"
+                },
+                {
+                  "language_equivalents": {
+                    "cs": "Peníze",
+                    "en": "Money",
+                    "pl": "Pieniądze"
+                  },
+                  "object_type": "WORD"
+                }
+              ]
+            }
+
++ Response 200 (application/json)
+    
+    + Body
+    
+            {
+                 "messages": [
+                    {"i18nKey":"i18nKeySuccessMessageGroupsPersons","type":"success"}
+                 ]
+            }
+    
++  Response 400 (application/json)
+
+    + Body
+
+            {
+                 "messages": [
+                    {"i18nKey":"i18nKeyErrorMessageGroupsPersons","type":"error"}
+                 ]
+            }
+
+
 ## HR3 Group diagnostic words [/hr3/groups/{group_id}/words]
 
 ### Get group words for adding new persons to the group [GET]
@@ -2368,87 +2446,8 @@ List of words for diagnostic
                  "messages": [
                     {"i18nKey":"i18nKeyErrorMessageGroupDetailPersons","type":"error"}
                  ]
-            } 
-
-### Add new persons to group [POST]
-
-+ Request (application/json)
-
-    + Headers
-    
-            X-Auth-token: your_token
-            Accept: application/json
-
-    + Body
- 
-             {
-              "persons": [
-                {
-                  "name": "František",
-                  "surname": "Vomáčka",
-                  "position": "Kuchař",
-                  "lang_code": "cs",
-                  "email": "email1@dap-services.cz",
-                  "send_mail": true
-                },
-                {
-                  "name": "Elizabeth II.",
-                  "surname": "Windsor",
-                  "position": "Queen of the Empire",
-                  "lang_code": "en",
-                  "email": "email2@dap-services.cz",
-                  "send_mail": false
-                },
-                {
-                  "name": "Silvestr",
-                  "surname": "Alone",
-                  "position": "Boxer",
-                  "lang_code": "pl",
-                  "email": "email3@dap-services.cz",
-                  "send_mail": true
-                }
-              ],
-              "scan_objects": [
-                {
-                  "language_equivalents": {
-                    "cs": "Stravenky",
-                    "en": "Meal tickets",
-                    "pl": "bony żywnościowe"
-                  },
-                  "object_type": "WORD"
-                },
-                {
-                  "language_equivalents": {
-                    "cs": "Peníze",
-                    "en": "Money",
-                    "pl": "Pieniądze"
-                  },
-                  "object_type": "WORD"
-                }
-              ]
             }
 
-+ Response 200 (application/json)
-    
-    + Body
-    
-            {
-                 "messages": [
-                    {"i18nKey":"i18nKeySuccessMessageGroupsPersons","type":"success"}
-                 ]
-            }
-    
-+  Response 400 (application/json)
-
-    + Body
-
-            {
-                 "messages": [
-                    {"i18nKey":"i18nKeyErrorMessageGroupsPersons","type":"error"}
-                 ]
-            } 
-
- 
 ## HR3 Group persons delete person [/hr3/groups/{group_id}/persons/{id}]
              
 ### Delete person from group's persons [DELETE]
