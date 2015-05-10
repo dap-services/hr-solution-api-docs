@@ -1834,16 +1834,24 @@ Get the list of supported languages for diagnostic.
 
 
 
-# Group result            
-## Vystup pro HR4 format 1 and 2 [/result/{idresult}/generate]
-### Result 1 and 2 [POST]
+# Group Result
 
-+ Request 
+## Resource for person and group results [/result/{id}/generate]
 
+### Generate result [POST]
+
++ Request (application/json)
+
+    + Headers
+
+            X-Auth-token: your_token
+            Accept: application/json
+
+    + Body
             {
-                "scan_data_ids":[4343]
+                "person_record_ids": [4343]
             }
-            
+
 + Response 200
 
             {
@@ -1902,20 +1910,83 @@ Get the list of supported languages for diagnostic.
                     {"id": 18, "name": "role19_name_i18nkey", "value": 20},
                     {"id": 19, "name": "role20_name_i18nkey", "value": 20}]
             }
-            
-+ Response 400 
 
-    + Header
-
-            Access-Control-Allow-Origin: *
++ Response 400
 
     + Body
 
             {
-                "messages": 
-                    {"i18nKey":"result_error_code","type":"error"}
+                "messages": {"i18nKey":"result_error_code","type":"error"}
             }
-            
+
+## Resource for sharing of person and group results [/result/{id}/share]
+
+### Share result [POST]
+
++ Request (application/json)
+
+    + Headers
+
+            X-Auth-token: your_token
+            Accept: application/json
+
+    + Body
+            {
+                "person_record_ids": [4343],
+                "emails_to_share": ["one@dap-services.cz", "two@dap-services.cz"]
+            }
+
++ Response 200
+
+            {
+                "messages": [
+                    {"i18nKey":"i18nKeySuccessMessage","type":"success"}
+                ]
+            }
+
++ Response 400
+
+    + Body
+
+            {
+                "messages": {"i18nKey":"result_error_code","type":"error"}
+            }
+
+## Resource for printing person and group results [/result/{id}/print]
+
+### Print result [POST]
+
++ Request (application/json)
+
+    + Headers
+
+            X-Auth-token: your_token
+            Accept: application/json
+
+    + Body
+            {
+                "person_record_ids": [4343]
+            }
+
++ Response 200
+
+    + Header
+
+            Content-Type: application/pdf
+            Content-Disposition: attachment; filename="result.pdf"
+
+    + Body
+
+            pdf_file
+
++ Response 400
+
+    + Body
+
+            {
+                "messages": {"i18nKey":"result_error_code","type":"error"}
+            }
+
 ## List of user training [/account/training]
 
 ### Operation [GET]
@@ -1967,7 +2038,7 @@ Get the list of all user training.
             ]
 
 
-# Group  HR3 
+# Group  HR3
 
 ## HR3 groups dashboard list [/hr3/groups]
 
@@ -1976,7 +2047,7 @@ Get the list of all user training.
 + Request
 
     + Headers
-    
+
             X-Auth-token: your_token
             Accept: application/json
 
@@ -2031,7 +2102,7 @@ Get the list of all user training.
                 "persons_count": "15"
               }
             ]
-            
+
 + Response 400 (application/json)
 
     + Body
@@ -2040,14 +2111,14 @@ Get the list of all user training.
                  "messages": [
                     {"i18nKey":"i18nKeyErrorMessage","type":"error"}
                  ]
-            } 
+            }
 
-### Create new group of persons [POST]
+### Create new group [POST]
 
 + Request (application/json)
 
     + Headers
-    
+
             X-Auth-token: your_token
             Accept: application/json
 
@@ -2102,13 +2173,13 @@ Get the list of all user training.
 + Response 200 (application/json)
 
     + Body
-    
+
             {
                  "messages": [
                     {"i18nKey":"i18nKeyErrorMessageNewGroup","type":"success"}
                  ]
             }
-    
+
 +  Response 400 (application/json)
 
     + Body
@@ -2117,12 +2188,13 @@ Get the list of all user training.
                  "messages": [
                     {"i18nKey":"i18nKeyErrorMessageNewGroup","type":"error"}
                  ]
-            } 
- 
- 
-## HR3 Group detail [/hr3/groups/{group_id}]
+            }
+
+## HR3 Group detail [/hr3/groups/{id}]
 
 ### Show detail of group [GET]
+
+> TODO: response will include pesron in group (maybe parameter persons=true in url).
 
 + Request
 
@@ -2133,11 +2205,6 @@ Get the list of all user training.
 
 + Response 200 (application/json)
 
-    + Headers
-    
-            X-License-Hr3: true
-            Access-Control-Expose-Headers: X-License-Hr3
-
     + Body
 
             {
@@ -2146,8 +2213,8 @@ Get the list of all user training.
                 "created_date": "1412154655000",
                 "diagnostics_completed": "4",
                 "persons_count": "12"
-            } 
-            
+            }
+
 + Response 400 (application/json)
 
     + Body
@@ -2156,9 +2223,11 @@ Get the list of all user training.
                  "messages": [
                     {"i18nKey":"i18nKeyErrorMessageGroupDetail","type":"error"}
                  ]
-            } 
+            }
 
-### Add new persons to group [PUT]
+### Update group [PUT]
+
+> Group attributes is not supported, only new persons into group.
 
 + Request (application/json)
 
@@ -2168,7 +2237,7 @@ Get the list of all user training.
             Accept: application/json
 
     + Body
- 
+
              {
               "persons": [
                 {
@@ -2217,15 +2286,15 @@ Get the list of all user training.
             }
 
 + Response 200 (application/json)
-    
+
     + Body
-    
+
             {
                  "messages": [
                     {"i18nKey":"i18nKeySuccessMessageGroupsPersons","type":"success"}
                  ]
             }
-    
+
 +  Response 400 (application/json)
 
     + Body
@@ -2236,31 +2305,25 @@ Get the list of all user training.
                  ]
             }
 
+## HR3 Group diagnostic words [/hr3/groups/{id}/words]
 
-## HR3 Group diagnostic words [/hr3/groups/{group_id}/words]
+> TODO: I don't understand this resource @Dan
 
-### Get group words for adding new persons to the group [GET]
+### Get group words for adding new persons to the group. [GET]
 
-List of words for diagnostic
+List of words for diagnostic.
 
 + Request (application/json)
 
     + Headers
- 
+
             X-Auth-token: your_token
             Accept: application/json
- 
-  
 
 + Response 200  (application/json)
 
-    + Headers
- 
-            X-License-Hr3: true
-            Access-Control-Expose-Headers: X-License-Hr3
-    
     + Body
-    
+
             {
               "persons": [
                 {
@@ -2319,8 +2382,7 @@ List of words for diagnostic
                 }
               ]
             }
-  
-    
+
 +  Response 400 (application/json)
 
     + Body
@@ -2329,9 +2391,7 @@ List of words for diagnostic
                  "messages": [
                     {"i18nKey":"i18nKeyErrorMessageGroupsTeamdetail","type":"error"}
                  ]
-            } 
- 
-  
+            }
 
 ## HR3 Groups persons [/hr3/groups/{group_id}/persons]
 
@@ -2347,7 +2407,7 @@ List of words for diagnostic
 + Response 200 (application/json)
 
     + Body
- 
+
              [
               {
                 "id": 1,
@@ -2435,9 +2495,8 @@ List of words for diagnostic
                 "diagnostic_time": "1409562655000",
                 "affected": false
               }
-              
             ]
-            
+
 + Response 400 (application/json)
 
     + Body
@@ -2448,9 +2507,11 @@ List of words for diagnostic
                  ]
             }
 
-## HR3 Group persons delete person [/hr3/groups/{group_id}/persons/{id}]
-             
+## HR3 Group persons [/hr3/groups/{group_id}/persons/{id}]
+
 ### Delete person from group's persons [DELETE]
+
+> If person diagnostics is complete, deletion is not available.
 
 + Request (application/json)
 
@@ -2458,29 +2519,31 @@ List of words for diagnostic
 
             X-Auth-token: your_token
             Accept: application/json
-            
+
 + Response 200 (application/json)
 
     + Body
 
             {
-                "messages":[  
+                "messages":[
                 {"i18nKey":"i18nKeySuccessMessageGroupsPersonsDeletePerson","type":"success"}
                  ]
-            }    
-            
+            }
+
 + Response 400 (application/json)
 
     + Body
 
             {
-                 "messages":[  
+                 "messages":[
                     {"i18nKey":"i18nKeyErrorMessageGroupsPersonsDeletePerson","type":"error"}
                   ]
             }
 
 ## HR3 Group persons send invitation [/hr3/groups/{group_id}/persons/{id}/invitation]
-            
+
+> Deprecated, will be renamed to invite (POST operation).
+
 ### Send email invitation for diagnostic whith scaner url [POST]
 
 + Request (application/json)
@@ -2489,7 +2552,7 @@ List of words for diagnostic
 
             X-Auth-token: your_token
             Accept: application/json
-            
+
 + Response 200 (application/json)
 
     + Body
@@ -2497,9 +2560,9 @@ List of words for diagnostic
             {
                 "messages": [
                 {"i18nKey":"i18nKeySuccessMessageGroupsPersonsDiagnosticEmail","type":"success"}
-                 ] 
-            }    
-            
+                 ]
+            }
+
 + Response 400 (application/json)
 
     + Body
@@ -2507,13 +2570,14 @@ List of words for diagnostic
             {
                  "messages": [
                     {"i18nKey":"i18nKeyErrorMessageGroupsPersonsDiagnosticEmail","type":"error"}
-                  ] 
-            }           
-
+                  ]
+            }
 
 ## HR3 Groups teams [/hr3/groups/{group_id}/teams]
 
 ### Get the list of saved teams. [GET]
+
+> TODO - persons in object format!
 
 + Request (application/json)
 
@@ -2525,7 +2589,7 @@ List of words for diagnostic
 + Response 200 (application/json)
 
     + Body
- 
+
             [
               {
                 "id": 43,
@@ -2549,7 +2613,7 @@ List of words for diagnostic
                 ]
               }
             ]
-            
+
 + Response 400 (application/json)
 
     + Body
@@ -2558,41 +2622,40 @@ List of words for diagnostic
                  "messages": [
                     {"i18nKey":"i18nKeyErrorMessageGroupsTeamDetail","type":"error"}
                  ]
-            } 
+            }
 
 ### Create new team [POST]
 
-For this request we apply hr3 licence.
+For this request we apply hr3 licence. -- NO, we don't. Licence will be applied after first click on generate result.
 
 + Request (application/json)
 
     + Headers
-    
+
             X-Auth-token: your_token
             Accept: application/json
-             Access-Control-Allow-Origin: *
 
     + Body
- 
+
             {
-            "persons_ids": [2,4,6,7] 
+                "persons_ids": [2,4,6,7]
             }
 
 + Response 200  (application/json)
 
     + Headers
-    
+
             X-License-Hr3: true
             Access-Control-Expose-Headers: X-License-Hr3
-    
+
     + Body
-    
+
             {
                  "messages": [
                     {"i18nKey":"i18nKeySuccessMessageGroupsTeamCreated","type":"success"}
                  ]
             }
-    
+
 +  Response 400 (application/json)
 
     + Body
@@ -2601,12 +2664,11 @@ For this request we apply hr3 licence.
                  "messages": [
                     {"i18nKey":"i18nKeyErrorMessageGroupsTeamCreated","type":"error"}
                  ]
-            } 
+            }
 
- 
-## HR3 Groups teams delete team [/hr3/groups/{group_id}/teams/{team_id}]
-             
-### Delete team from group's teams [DELETE]
+## HR3 Groups teams. [/hr3/groups/{id}/teams/{id}]
+
+### Delete team [DELETE]
 
 + Request (application/json)
 
@@ -2620,63 +2682,60 @@ For this request we apply hr3 licence.
     + Body
 
             {
-                "messages":[  
+                "messages":[
                 {"i18nKey":"i18nKeySuccessMessageGroupsTeamsDeleteTeam","type":"success"}
                  ]
-            }    
-            
+            }
+
 + Response 400 (application/json)
 
     + Body
 
             {
-                 "messages":[  
+                 "messages":[
                     {"i18nKey":"i18nKeyErrorMessageGroupsTeamsDeleteTeam","type":"error"}
                   ]
-            }           
- 
+            }
+
 ### Update team [PUT]
-Update team.
 
 + Request (application/json)
 
     + Headers
-    
+
             X-Auth-token: your_token
             Accept: application/json
-            Access-Control-Allow-Origin: *
 
     + Body
-             
-            { 
-                "team_name":"new team name",
-                "persons_ids":[2,5,8,13,24] 
-            }
-             
-+ Response 200 (application/json)
-        
-    + Body
-        
+
             {
-                 "messages":[  
+                "team_name":"new team name",
+                "persons_ids":[2,5,8,13,24]
+            }
+
++ Response 200 (application/json)
+
+    + Body
+
+            {
+                 "messages":[
                 {"i18nKey":"i18nKeySuccessMessageGroupsTeamsUpdateTeam","type":"success"}
                 ]
-            }    
-                    
+            }
+
 + Response 400 (application/json)
-        
+
     + Body
-        
+
             {
-                "messages":[  
+                "messages":[
                 {"i18nKey":"i18nKeyErrorMessageGroupsTeamsUpdateTeam","type":"error"}
                 ]
-            }        
-         
- 
- 
+            }
 
 ## HR3 Groups teams share team's result [/hr3/groups/{group_id}/teams/{team_id}/sharing]
+
+> DEPRECATED, use /result/{id}/generate
 
 ### Share team's result [POST]
 
@@ -2717,6 +2776,8 @@ Update team.
  
  
 ## HR3 Groups teams comparison [/hr3/groups/{group_id}/teams/comparison]
+
+> DEPRECATED, use /result/{id}/generate
 
 ### Get the list teams for comparison. [GET]
 Get result data for list of teams for comparison. Teams are selected by user in group detail.
@@ -2815,6 +2876,9 @@ Get result data for list of teams for comparison. Teams are selected by user in 
 
  
 ### Generate new team result for team comparison [PUT]
+
+> DEPRECATED, use /result/{id}/generate
+
 Generate new team result, from list of group persons ids.
 
 + Request (application/json)
@@ -2883,6 +2947,8 @@ Generate new team result, from list of group persons ids.
  
 ## HR3 Groups teams share team's result from team comparison [/hr3/groups/{group_id}/comparison/sharing]
 
+> DEPRECATED, use /result/{id}/share
+
 ### Share team's result from team comparison [POST]
 
 + Request (application/json)
@@ -2922,6 +2988,8 @@ Generate new team result, from list of group persons ids.
  
  
 ## HR3 Data for team's result [/result/teams/{team_id}/generate]
+
+> DEPRECATED, use /result/{id}/generate
 
 ### Data for team's result [POST]
 
