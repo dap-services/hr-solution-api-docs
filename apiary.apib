@@ -2346,7 +2346,7 @@ Get the list of all user training.
                  ]
             }
 
-## HR3 Group detail [/hr3/groups/{id}]
+## HR3 Group detail [/hr3/groups/{id}/{?persons}]
 
 ### Show detail of group [GET]
 
@@ -2368,7 +2368,106 @@ Get the list of all user training.
                 "name": "Company Name 3",
                 "created_date": "1412154655000",
                 "diagnostics_completed": "4",
-                "persons_count": "12"
+                "persons_count": "12",
+                "persons":[
+                  {
+                    "id": 1,
+                    "name": "František",
+                    "surname": "Vomáčka",
+                    "position": "Kuchař",
+                    "person_record_id": "42",
+                    "diagnostic_time": "1412154655000",
+                    "affected": false
+                  },
+                  {
+                    "id": 2,
+                    "name": "Elizabeth II.",
+                    "surname": "Windsor",
+                    "position": "Queen of the Empire",
+                    "diagnostic_time": null
+                  },
+                  {
+                    "id": 3,
+                    "name": "Silvestr",
+                    "surname": "Alone",
+                    "position": "Boxer",
+                    "person_record_id": "53",
+                    "diagnostic_time": "1406884255000",
+                    "affected": true
+                  },
+                  {
+                    "id": 4,
+                    "name": "Arnold",
+                    "surname": "Schwarz",
+                    "position": "Krotitel predátorů",
+                    "diagnostic_time": null
+                  },
+                  {
+                    "id": 5,
+                    "name": "Elton",
+                    "surname": "John",
+                    "position": "Profesionální účastník karaoke",
+                    "person_record_id": "22",
+                    "diagnostic_time": "1409562655000",
+                    "affected": false
+                  },
+                  {
+                    "id": 6,
+                    "name": "Jan",
+                    "surname": "Novák",
+                    "position": "Profesionální účastník karaoke",
+                    "person_record_id": "61",
+                    "diagnostic_time": "1409562655000",
+                    "affected": false
+                  },
+                  {
+                    "id": 7,
+                    "name": "John",
+                    "surname": "Doe",
+                    "position": "Profesionální účastník karaoke",
+                    "person_record_id": "24",
+                    "diagnostic_time": "1409562655000",
+                    "affected": false
+                  },
+                  {
+                    "id": 8,
+                    "name": "Pavel",
+                    "surname": "Hrabil",
+                    "position": "Business",
+                    "person_record_id": "44",
+                    "diagnostic_time": "1409562655000",
+                    "affected": false
+                  },
+                  {
+                    "id": 9,
+                    "name": "Elton",
+                    "surname": "John",
+                    "position": "Hudebník",
+                    "person_record_id": "35",
+                    "diagnostic_time": "1409562655000",
+                    "affected": false
+                  },
+                  {
+                    "id": 10,
+                    "name": "Eva",
+                    "surname": "Konopniková",
+                    "position": "Profesionální účastník karaoke",
+                    "person_record_id": "36",
+                    "diagnostic_time": "1409562655000",
+                    "affected": false
+                  },
+                  {
+                    "id": 11,
+                    "name": "Franta",
+                    "surname": "Koudelka",
+                    "person_record_id": "37",
+                    "position": "Profesionální účastník karaoke",
+                    "diagnostic_time": "1409562655000",
+                    "affected": false
+                  }
+                ]
+                
+                
             }
 
 + Response 400 (application/json)
@@ -2479,7 +2578,6 @@ Get the list of all user training.
 
 ## HR3 Group diagnostic words [/hr3/groups/{id}/scan_objects]
 
-> TODO: I don't understand this resource @Dan
 
 ### Get group words for adding new persons to the group. [GET]
 
