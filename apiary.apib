@@ -2844,9 +2844,7 @@ List of words for diagnostic.
 ## HR3 Groups teams [/hr3/groups/{group_id}/teams]
 
 ### Get the list of saved teams. [GET]
-
-> TODO - persons in object format!
-
+ 
 + Request (application/json)
 
     + Headers
@@ -2864,10 +2862,31 @@ List of words for diagnostic.
                 "name": "Tým IT",
                 "created_date": "1412154655000",
                 "persons": [
-                  "František Vomáčka",
-                  "Silvestr Alone",
-                  "Arnold Schwarz",
-                  "Elton John"
+                  {
+                    "id": 1,
+                    "name": "František",
+                    "surname": "Vomáčka",
+                    "person_record_id": "35"
+                    
+                  },
+                  {
+                    "id": 3,
+                    "name": "Silvestr",
+                    "surname": "Alone",
+                    "person_record_id": "36"
+                  },
+                  {
+                    "id": 4,
+                    "name": "Arnold",
+                    "surname": "Schwarz",
+                    "person_record_id": "25"
+                  },
+                  {
+                    "id": 5,
+                    "name": "Elton",
+                    "surname": "John",
+                    "person_record_id": "47"
+                  }
                 ]
               },
               {
@@ -2875,9 +2894,27 @@ List of words for diagnostic.
                 "name": "Administrace",
                 "created_date": "1409562655000",
                 "persons": [
-                  "Elizabeth Windsor",
-                  "Arnold Schwarz",
-                  "Elton John"
+                   
+                  {
+                    "id": 2,
+                    "name": "Elizabeth II.",
+                    "surname": "Windsor",
+                    "person_record_id": "21"
+                  },
+                  
+                  {
+                    "id": 4,
+                    "name": "Arnold",
+                    "surname": "Schwarz",
+                   "person_record_id": "25"
+                  },
+                  {
+                    "id": 5,
+                    "name": "Elton",
+                    "surname": "John",
+                   "person_record_id": "47"
+                  } 
+              
                 ]
               }
             ]
