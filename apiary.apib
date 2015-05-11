@@ -1990,9 +1990,154 @@ Get the list of supported languages for diagnostic.
                 "messages": {"i18nKey":"result_error_code","type":"error"}
             }
 
+## Resource for teams results [/result/{id}/teams/generate]
+
+This resource works with multiple team of persons.
+
+### Generate result [POST]
+
++ Request (application/json)
+
+    + Headers
+
+            X-Auth-token: your_token
+            Accept: application/json
+
+    + Body
+
+            {
+                "person_record_ids": [[1, 2, 3], [4, 2, 1], [4, 5, 6, 7, 8]]
+            }
+
++ Response 200
+
+            [
+              {
+                "112": {
+                  "value": 15,
+                  "description": [
+                    "trait2_text3_i18nkey"
+                  ],
+                  "color": "RED",
+                  "warning": false
+                },
+                "230": {
+                  "value": 90,
+                  "description": [
+                    "trait1_text1_i18nkey",
+                    "trait1_text2_i18nkey"
+                  ],
+                  "color": "GREEN",
+                  "warning": true
+                }
+              },
+              {
+                "112": {
+                  "value": 30,
+                  "description": [
+                    "trait2_text3_i18nkey"
+                  ],
+                  "color": "RED",
+                  "warning": false
+                },
+                "230": {
+                  "value": 70,
+                  "description": [
+                    "trait1_text1_i18nkey",
+                    "trait1_text2_i18nkey"
+                  ],
+                  "color": "GREEN",
+                  "warning": true
+                }
+              }
+            ]
+
++ Response 400
+
+    + Body
+
+            {
+                "messages": {"i18nKey":"result_error_code","type":"error"}
+            }
+
+## Resource for sharing of teams results [/result/{id}/teams/share]
+
+This resource works with multiple team of persons.
+
+### Share result [POST]
+
++ Request (application/json)
+
+    + Headers
+
+            X-Auth-token: your_token
+            Accept: application/json
+
+    + Body
+
+            {
+                "person_record_ids": [[1, 2, 3], [4, 2, 1], [4, 5, 6, 7, 8]],
+                "emails_to_share": ["one@dap-services.cz", "two@dap-services.cz"]
+            }
+
++ Response 200
+
+            {
+                "messages": [
+                    {"i18nKey":"i18nKeySuccessMessage","type":"success"}
+                ]
+            }
+
++ Response 400
+
+    + Body
+
+            {
+                "messages": {"i18nKey":"result_error_code","type":"error"}
+            }
+
+## Resource for printing teams results [/result/{id}/teams/print]
+
+This resource works with multiple team of persons.
+
+### Print result [POST]
+
++ Request (application/json)
+
+    + Headers
+
+            X-Auth-token: your_token
+            Accept: application/json
+
+    + Body
+
+            {
+                "person_record_ids": [[1, 2, 3], [4, 2, 1], [4, 5, 6, 7, 8]]
+            }
+
++ Response 200
+
+    + Header
+
+            Content-Type: application/pdf
+            Content-Disposition: attachment; filename="result.pdf"
+
+    + Body
+
+            pdf_file
+
++ Response 400
+
+    + Body
+
+            {
+                "messages": {"i18nKey":"result_error_code","type":"error"}
+            }
+
 ## List of user training [/account/training]
 
 ### Operation [GET]
+
 Get the list of all user training.
 
 #### List of user training
