@@ -2716,7 +2716,7 @@ List of words for diagnostic.
               {
                 "id": 6,
                 "first_name": "Jan",
-                "surname": "Novák",
+                "last_name": "Novák",
                 "position": "Profesionální účastník karaoke",
                 "diagnostic_time": "1409562655000",
                 "affected": false
@@ -2889,7 +2889,7 @@ List of words for diagnostic.
               },
               {
                 "id": 22,
-                "first_name": "Administrace",
+                "name": "Administrace",
                 "created_date": "1409562655000",
                 "persons": [
                    
@@ -3035,48 +3035,6 @@ For this request we apply hr3 licence. -- NO, we don't. Licence will be applied 
                 {"i18nKey":"i18nKeyErrorMessageGroupsTeamsUpdateTeam","type":"error"}
                 ]
             }
-
-## HR3 Groups teams share team's result [/hr3/groups/{group_id}/teams/{team_id}/sharing]
-
-> DEPRECATED, use /result/{id}/generate
-
-### Share team's result [POST]
-
-+ Request (application/json)
-
-    + Headers
-
-            X-Auth-token: your_token
-            Accept: application/json
-            
-    + Body
-
-             {
-                "emails_to_share": "person@seznam.cz,person@seznam.cz,person@seznam.cz"
-                 
-            }
-
-+ Response 200 (application/json)
-
-    + Body
-
-            {
-                "messages": [
-                {"i18nKey":"i18nKeySuccessMessageGroupDetailShare","type":"success"}
-                ]
-            }    
-            
-+ Response 400 (application/json)
-
-    + Body
-
-            {
-                 "messages": [
-                    {"i18nKey":"i18nKeyErrorMessageGroupDetailShare","type":"error"}
-                 ]
-            } 
- 
- 
  
 ## HR3 Groups teams comparison [/hr3/groups/{group_id}/teams/comparison]
 
