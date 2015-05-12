@@ -3223,49 +3223,6 @@ Generate new team result, from list of group persons ids.
                     {"i18nKey":"i18nKeyErrorMessageGroupsCreateTeamResult","type":"error"}
                  ]
             } 
-
- 
-## HR3 Groups teams share team's result from team comparison [/hr3/groups/{group_id}/comparison/sharing]
-
-> DEPRECATED, use /result/{id}/share
-
-### Share team's result from team comparison [POST]
-
-+ Request (application/json)
-
-    + Headers
-
-            X-Auth-token: your_token
-            Accept: application/json
-            
-    + Body
-
-             {
-                "team_ids":[2,5,7],
-                "emails_to_share": "person@seznam.cz,person@seznam.cz,person@seznam.cz"
-                 
-            }
-
-+ Response 200 (application/json)
-
-    + Body
-
-            {
-                "messages": [
-                {"i18nKey":"i18nKeySuccessMessageGroupComparisonShare","type":"success"}
-                ]
-            }    
-            
-+ Response 400 (application/json)
-
-    + Body
-
-            {
-                 "messages": [
-                    {"i18nKey":"i18nKeyErrorMessageGroupComparisonShare","type":"error"}
-                 ]
-            } 
-  
  
  
  
