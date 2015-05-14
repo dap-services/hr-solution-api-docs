@@ -2509,7 +2509,7 @@ Get the list of all user training.
                  ]
             }
 
-## HR3 Group detail [/hr3/groups/{id}{?persons,teams}]
+## HR3 Group detail [/hr3/groups/{id}{?persons,teams,scan_objects}]
 
 ### Show detail of group [GET]
 
@@ -2518,8 +2518,8 @@ Get the list of all user training.
 + Parameters
     + persons (optional,boolean) ...Add to response list of persons if true
     + teams (optional,boolean) ...Add to response list of groups teams if true
+    + scan_objects (optional,boolean) ...Add to response list of groups scan_objects if true
  
-
 
 + Request
 
@@ -2544,6 +2544,7 @@ Get the list of all user training.
                     "first_name": "František",
                     "last_name": "Vomáčka",
                     "position": "Kuchař",
+                     "lang_code": "en",
                     "person_record_id": "42",
                     "diagnostic_time": "1412154655000",
                     "affected": false
@@ -2553,6 +2554,7 @@ Get the list of all user training.
                     "first_name": "Elizabeth II.",
                     "last_name": "Windsor",
                     "position": "Queen of the Empire",
+                     "lang_code": "en",
                     "diagnostic_time": null
                   },
                   {
@@ -2560,6 +2562,7 @@ Get the list of all user training.
                     "first_name": "Silvestr",
                     "last_name": "Alone",
                     "position": "Boxer",
+                     "lang_code": "cs",
                     "person_record_id": "53",
                     "diagnostic_time": "1406884255000",
                     "affected": true
@@ -2569,13 +2572,15 @@ Get the list of all user training.
                     "first_name": "Arnold",
                     "last_name": "Schwarz",
                     "position": "Krotitel predátorů",
+                     "lang_code": "cs",
                     "diagnostic_time": null
                   },
                   {
                     "id": 5,
                     "first_name": "Elton",
                     "last_name": "John",
-                    "position": "Profesionální účastník karaoke",
+                    "position": "Profesionální programator",
+                    "lang_code": "en",
                     "person_record_id": "22",
                     "diagnostic_time": "1409562655000",
                     "affected": false
@@ -2585,6 +2590,7 @@ Get the list of all user training.
                     "first_name": "Jan",
                     "last_name": "Novák",
                     "position": "Profesionální účastník karaoke",
+                     "lang_code": "cs",
                     "person_record_id": "61",
                     "diagnostic_time": "1409562655000",
                     "affected": false
@@ -2594,6 +2600,7 @@ Get the list of all user training.
                     "first_name": "John",
                     "last_name": "Doe",
                     "position": "Profesionální účastník karaoke",
+                     "lang_code": "cs",
                     "person_record_id": "25",
                     "diagnostic_time": "1409562655000",
                     "affected": false
@@ -2603,6 +2610,7 @@ Get the list of all user training.
                     "first_name": "Pavel",
                     "last_name": "Hrabil",
                     "position": "Business",
+                     "lang_code": "en",
                     "person_record_id": "44",
                     "diagnostic_time": "1409562655000",
                     "affected": false
@@ -2612,6 +2620,7 @@ Get the list of all user training.
                     "first_name": "Elton",
                     "last_name": "John",
                     "position": "Hudebník",
+                     "lang_code": "cs",
                     "person_record_id": "35",
                     "diagnostic_time": "1409562655000",
                     "affected": false
@@ -2621,6 +2630,7 @@ Get the list of all user training.
                     "first_name": "Eva",
                     "last_name": "Konopniková",
                     "position": "Profesionální účastník karaoke",
+                     "lang_code": "en",
                     "person_record_id": "36",
                     "diagnostic_time": "1409562655000",
                     "affected": false
@@ -2630,6 +2640,7 @@ Get the list of all user training.
                     "first_name": "Franta",
                     "last_name": "Koudelka",
                     "person_record_id": "37",
+                     "lang_code": "cs",
                     "position": "Profesionální účastník karaoke",
                     "diagnostic_time": "1409562655000",
                     "affected": false
@@ -2696,7 +2707,61 @@ Get the list of all user training.
                   
                     ]
                 }
-            ]
+            ],
+            "scan_objects": [
+                {
+                  "language_equivalents": {
+                    "cs": {
+                        "id": 1,
+                        "label": "Stravenky"
+                        },
+                    "en": {
+                        "id": 2,
+                        "label": "Meal tickets"
+                        }
+                  },
+                  "object_type": "WORD"
+                },
+                {
+                  "language_equivalents": {
+                    "cs": {
+                        "id": 3,
+                        "label": "Peníze"
+                        },
+                    "en": {
+                        "id": 4,
+                        "label": "Money"
+                        }
+                  },
+                  "object_type": "WORD"
+                },
+                {
+                  "language_equivalents": {
+                    "cs": {
+                        "id": 5,
+                        "label": "Moje práce"
+                        },
+                    "en": {
+                        "id": 6,
+                        "label": "My job"
+                        }
+                  },
+                  "object_type": "WORD"
+                },
+                {
+                  "language_equivalents": {
+                    "cs": {
+                        "id": 7,
+                        "label": "Peníze"
+                        },
+                    "en": {
+                        "id": 8,
+                        "label": "Money"
+                        }
+                  },
+                  "object_type": "WORD"
+                }
+              ]
                 
             }
 
