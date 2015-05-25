@@ -2263,7 +2263,7 @@ This resource works with multiple team of persons.
 
 This resource works with multiple team of persons.
 
-### Print result [POST]
+### Print teams result [POST]
 
 + Request (application/json)
 
@@ -2273,10 +2273,60 @@ This resource works with multiple team of persons.
             Accept: application/json
 
     + Body
-
-            {
-                "person_record_ids": [[1, 2, 3], [4, 2, 1], [4, 5, 6, 7, 8]]
-            }
+ 
+               [
+               {
+                    "name": "Tým IT",
+                    "created_date": "1412154655000",
+                    "persons": [
+                          {
+                            "first_name": "František",
+                            "last_name": "Vomáčka",
+                            "person_record_id": "35"
+            
+                          },
+                          {
+                            "first_name": "Silvestr",
+                            "last_name": "Alone",
+                            "person_record_id": "36"
+                          },
+                          {
+                            "first_name": "Arnold",
+                            "last_name": "Schwarz",
+                            "person_record_id": "25"
+                          },
+                          {
+                            "first_name": "Elton",
+                            "last_name": "John",
+                            "person_record_id": "37"
+                          }
+                        ]
+                },
+                {
+                    "name": "Administrace",
+                    "persons": [
+            
+                      {
+                        "first_name": "Elizabeth II.",
+                        "last_name": "Windsor",
+                        "person_record_id": "22"
+                      },
+            
+                      {
+                        "first_name": "Arnold",
+                        "last_name": "Schwarz",
+                       "person_record_id": "25"
+                      },
+                      {
+                        "first_name": "Elton",
+                        "last_name": "John",
+                       "person_record_id": "37"
+                      } 
+            
+                    ]
+                }
+              ] 
+ 
 
 + Response 200
 
@@ -2296,6 +2346,86 @@ This resource works with multiple team of persons.
             {
                 "messages": {"i18nKey":"result_error_code","type":"error"}
             }
+
+
+## Print configuration [/print/configuration/{print_configuration_id}]
+
+### Get stored data for print [GET]
+
++ Request
+
+    + Headers
+
+            X-Auth-token: your_token
+            Accept: application/json
+
++ Response 200 (application/json)
+
+    + Body
+
+             [
+               {
+                    "name": "Tým IT",
+                    "created_date": "1412154655000",
+                    "persons": [
+                          {
+                            "first_name": "František",
+                            "last_name": "Vomáčka",
+                            "person_record_id": "35"
+            
+                          },
+                          {
+                            "first_name": "Silvestr",
+                            "last_name": "Alone",
+                            "person_record_id": "36"
+                          },
+                          {
+                            "first_name": "Arnold",
+                            "last_name": "Schwarz",
+                            "person_record_id": "25"
+                          },
+                          {
+                            "first_name": "Elton",
+                            "last_name": "John",
+                            "person_record_id": "37"
+                          }
+                        ]
+                },
+                {
+                    "name": "Administrace",
+                    "persons": [
+            
+                      {
+                        "first_name": "Elizabeth II.",
+                        "last_name": "Windsor",
+                        "person_record_id": "22"
+                      },
+            
+                      {
+                        "first_name": "Arnold",
+                        "last_name": "Schwarz",
+                       "person_record_id": "25"
+                      },
+                      {
+                        "first_name": "Elton",
+                        "last_name": "John",
+                       "person_record_id": "37"
+                      } 
+            
+                    ]
+                }
+              ]
+
++ Response 400 (application/json)
+
+    + Body
+
+            {
+                 "messages": [
+                    {"i18nKey":"i18nKeyErrorMessagePrintConfiguration","type":"error"}
+                 ]
+            }
+            
 
 ## List of user training [/account/training]
 
