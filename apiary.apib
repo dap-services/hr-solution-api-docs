@@ -3323,6 +3323,8 @@ List of words for diagnostic.
 
 ### Send email invitation for diagnostic whith scaner url [POST]
 
+> template - Define what email will be send. Enum of values RESEND, AFFECTED, FIRST
+
 + Request (application/json)
 
     + Headers
@@ -3333,8 +3335,7 @@ List of words for diagnostic.
     + Body
     
             {
-                affected: false,
-                again: true
+                template: 'RESEND'
             }
 
 + Response 200 (application/json)
