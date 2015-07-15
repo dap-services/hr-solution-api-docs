@@ -2328,7 +2328,7 @@ This resource works with multiple team of persons.
                 "messages": {"i18nKey":"result_error_code","type":"error"}
             }
 
-## Resource for printing teams results [/result/{id}/teams/print]
+## Resource for printing teams results [/result/teams/print]
 
 This resource works with multiple team of persons.
 
@@ -2343,58 +2343,11 @@ This resource works with multiple team of persons.
 
     + Body
  
-               [
-               {
-                    "name": "Tým IT",
-                    "created_date": "1412154655000",
-                    "persons": [
-                          {
-                            "first_name": "František",
-                            "last_name": "Vomáčka",
-                            "person_record_id": "35"
-            
-                          },
-                          {
-                            "first_name": "Silvestr",
-                            "last_name": "Alone",
-                            "person_record_id": "36"
-                          },
-                          {
-                            "first_name": "Arnold",
-                            "last_name": "Schwarz",
-                            "person_record_id": "25"
-                          },
-                          {
-                            "first_name": "Elton",
-                            "last_name": "John",
-                            "person_record_id": "37"
-                          }
-                        ]
-                },
+                
                 {
-                    "name": "Administrace",
-                    "persons": [
-            
-                      {
-                        "first_name": "Elizabeth II.",
-                        "last_name": "Windsor",
-                        "person_record_id": "22"
-                      },
-            
-                      {
-                        "first_name": "Arnold",
-                        "last_name": "Schwarz",
-                       "person_record_id": "25"
-                      },
-                      {
-                        "first_name": "Elton",
-                        "last_name": "John",
-                       "person_record_id": "37"
-                      } 
-            
-                    ]
-                }
-              ] 
+                    "result_id": 3,
+                    "print_configuration_id": "14" 
+                } 
  
 
 + Response 200
@@ -2417,8 +2370,54 @@ This resource works with multiple team of persons.
             }
 
 
+## Resource for printing teams results [/result/teams/print/invoker{?resultId,printId,fileName,token,lang}]
+
+This resource works with multiple team of persons. Resours calls POST "/result/teams/print" to trigger printing, returns pdf stream.
+
+### Print teams result invoker [GET]
+resultId,printId,fileName,token,lang
++ Parameters
+    + resultId (required,number) ...Result type
+    + printId (required,number) ...PrintConfiguration id of stored data
+    + fileName (required,string) ...File name of result file, was generated when data were stored
+    + token (required,string) ...Auth token
+    + lang (required,string) ...Language selected in App
+ 
++ Request (application/json)
+
+    + Headers
+
+            X-Auth-token: your_token
+            Accept: application/json
+
+   
+
++ Response 200
+
+    + Header
+
+            Content-Type: application/pdf
+            Content-Disposition: attachment; filename="result.pdf"
+
+    + Body
+
+            pdf_file
+
++ Response 400
+
+    + Body
+
+            {
+                "messages": {"i18nKey":"result_error_code","type":"error"}
+            }
+
+
+
+
+
+
 ## Print configuration [/print/print_configuration/{print_configuration_id}]
-Store data for print App.
+Store data for print App. Parameter "print_data" is send as String. 
 
 ### Get stored data for print [GET]
 
@@ -2635,8 +2634,7 @@ Store data for print App.
             }
             
 ### Store data for print [POST]
-Parameter "print_data" is send as String. 
- 
+
 + Request
 
     + Headers
