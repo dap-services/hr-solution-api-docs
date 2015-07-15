@@ -2309,7 +2309,8 @@ This resource works with multiple team of persons.
 
             {
                 "person_record_ids": [[1, 2, 3], [4, 2, 1], [4, 5, 6, 7, 8]],
-                "emails_to_share": ["one@dap-services.cz", "two@dap-services.cz"]
+                "emails_to_share": ["one@dap-services.cz", "two@dap-services.cz"],
+                "print_data":14
             }
 
 + Response 200
@@ -2375,7 +2376,7 @@ This resource works with multiple team of persons.
 This resource works with multiple team of persons. Resours calls POST "/result/teams/print" to trigger printing, returns pdf stream.
 
 ### Print teams result invoker [GET]
-resultId,printId,fileName,token,lang
+
 + Parameters
     + resultId (required,number) ...Result type
     + printId (required,number) ...PrintConfiguration id of stored data
