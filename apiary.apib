@@ -2418,6 +2418,7 @@ This resource works with multiple team of persons.
 
 
 ## Print configuration [/print/print_configuration/{print_configuration_id}]
+Store data for print App.
 
 ### Get stored data for print [GET]
 
@@ -2632,6 +2633,241 @@ This resource works with multiple team of persons.
                     {"i18nKey":"i18nKeyErrorMessagePrintConfiguration","type":"error"}
                  ]
             }
+            
+### Store data for print [POST]
+Parameter "print_data" is send as String. 
+ 
++ Request
+
+    + Headers
+
+            X-Auth-token: your_token
+            Accept: application/json
+
+    + Body
+          
+            {   
+            "person_record_ids":[[35,36,25,37],[22,25,37,64]],
+            "print_data":[
+               {
+                    "name": "Tým IT",
+                    "created_date": "1412154655000",
+                    "persons": [
+                          {
+                            "first_name": "František",
+                            "last_name": "Vomáčka",
+                            "person_record_id": "35"
+            
+                          },
+                          {
+                            "first_name": "Silvestr",
+                            "last_name": "Alone",
+                            "person_record_id": "36"
+                          },
+                          {
+                            "first_name": "Arnold",
+                            "last_name": "Schwarz",
+                            "person_record_id": "25"
+                          },
+                          {
+                            "first_name": "Elton",
+                            "last_name": "John",
+                            "person_record_id": "37"
+                          }
+                        ],
+                "result":{
+                        "251": [
+                        {
+                          "description": [ "trait21_role15_text_i18nkey" ],
+                          "name": "role15_name_i18nkey"
+                        }
+                      ],
+                      "242": {
+                        "color": "RED",
+                        "description": ["trait22_text1_i18nkey"],
+                        "value": 20,
+                        "warning": false
+                      },
+                      "252": {
+                        "color": "YELLOW",
+                        "description": ["trait23_text2_i18nkey"],
+                        "value": 39,
+                        "warning": false
+                      },
+                      "111": {
+                        "color": "GREEN",
+                        "description": ["trait24_text3_i18nkey"],
+                        "value": 45,
+                        "warning": false
+                      },
+                      "243": {
+                        "color": "GREEN",
+                        "description": [ "trait25_text3_i18nkey"],
+                        "value": 48,
+                        "warning": false
+                      },
+                      "244": {
+                        "color": "GREEN",
+                        "description": [ "trait26_text3_i18nkey"],
+                        "value": 51,
+                        "warning": false
+                      },
+                      "248": {
+                        "color": "GREEN",
+                        "description": [ "trait27_text3_i18nkey" ],
+                        "value": 53,
+                        "warning": false
+                      },
+                      "245": {
+                        "color": "GREEN",
+                        "description": [ "trait28_text3_i18nkey" ],
+                        "value": 55,
+                        "warning": false
+                      },
+                      "246": {
+                        "color": "GREEN",
+                        "description": [ "trait29_text3_i18nkey"],
+                        "value": 60,
+                        "warning": false
+                      },
+                      "247": {
+                        "color": "GREEN",
+                        "description": ["trait30_text4_i18nkey"],
+                        "value": 80,
+                        "warning": false
+                      },
+                      "249": {
+                        "color": "GREEN",
+                        "description": [ "trait31_text5_i18nkey", "trait31_text_warning_i18nkey"],
+                        "value": 91,
+                        "warning": true
+                      }
+                        
+                  }
+                },
+                {
+                    "name": "Administrace",
+                    "persons": [
+            
+                      {
+                        "first_name": "Elizabeth II.",
+                        "last_name": "Windsor",
+                        "person_record_id": "22"
+                      },
+            
+                      {
+                        "first_name": "Arnold",
+                        "last_name": "Schwarz",
+                       "person_record_id": "25"
+                      },
+                      {
+                        "first_name": "Elton",
+                        "last_name": "John",
+                       "person_record_id": "37"
+                      },
+                      {
+                        "first_name": "Standa",
+                        "last_name": "Vohnalek",
+                       "person_record_id": "64"
+                      }  
+            
+                    ],
+                    "result":{
+                        "251": [
+                        {
+                          "description": [ "trait21_role15_text_i18nkey" ],
+                          "name": "role15_name_i18nkey"
+                        }
+                      ],
+                      "242": {
+                        "color": "RED",
+                        "description": ["trait22_text1_i18nkey"],
+                        "value": 20,
+                        "warning": false
+                      },
+                      "252": {
+                        "color": "YELLOW",
+                        "description": ["trait23_text2_i18nkey"],
+                        "value": 39,
+                        "warning": false
+                      },
+                      "111": {
+                        "color": "GREEN",
+                        "description": ["trait24_text3_i18nkey"],
+                        "value": 45,
+                        "warning": false
+                      },
+                      "243": {
+                        "color": "GREEN",
+                        "description": [ "trait25_text3_i18nkey"],
+                        "value": 48,
+                        "warning": false
+                      },
+                      "244": {
+                        "color": "GREEN",
+                        "description": [ "trait26_text3_i18nkey"],
+                        "value": 51,
+                        "warning": false
+                      },
+                      "248": {
+                        "color": "GREEN",
+                        "description": [ "trait27_text3_i18nkey" ],
+                        "value": 53,
+                        "warning": false
+                      },
+                      "245": {
+                        "color": "GREEN",
+                        "description": [ "trait28_text3_i18nkey" ],
+                        "value": 55,
+                        "warning": false
+                      },
+                      "246": {
+                        "color": "GREEN",
+                        "description": [ "trait29_text3_i18nkey"],
+                        "value": 60,
+                        "warning": false
+                      },
+                      "247": {
+                        "color": "GREEN",
+                        "description": ["trait30_text4_i18nkey"],
+                        "value": 80,
+                        "warning": false
+                      },
+                      "249": {
+                        "color": "GREEN",
+                        "description": [ "trait31_text5_i18nkey", "trait31_text_warning_i18nkey"],
+                        "value": 91,
+                        "warning": true
+                      }
+                        
+                  }
+                }
+              ]
+            }
+
+
+
++ Response 200 (application/json)
+
+    + Body
+
+             
+            {
+                    "print_configuration_id": "32",
+                    "print_configuration_filename": "37c4c99c69a3a923474040cd6688f35a187489f8e95da11239856848d62f46da-cs.pdf",
+            }
+              
+
++ Response 400 (application/json)
+
+    + Body
+
+            {
+                 "messages": [
+                    {"i18nKey":"i18nKeyErrorMessagePrintConfiguration","type":"error"}
+                 ]
+            }
+            
             
 
 ## List of user training [/account/training]
