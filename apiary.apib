@@ -1504,7 +1504,7 @@ Get New Consultation details for hr4 model.
 Order New Consultation
 
 #### Order New Consultation
-
+    
 + Request (application/json)
 
     + Headers
@@ -1513,14 +1513,15 @@ Order New Consultation
             
     + Body
 
-             {
-                "person_id": "23",
-                "result_id": "23455",
-                "user_id": "12",
-                "consultation_date": "12.11.20014 13:30",
-                "consultation_form": "INPERSONDAPS",
-                "consultation_Lenght": "30 min"
-                 
+            {
+              "person_id": 23,
+              "result_id": 23455,
+              "user_id": 12,
+              "consultation_date": 1437645600000,
+              "consultation_form": "INPERSONDAPS",
+              "consultation_Lenght": 30,
+              "team_id": 569,
+              "module_type": "HR3"
             }
 
 + Response 201 (application/json)
